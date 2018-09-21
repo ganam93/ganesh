@@ -9,8 +9,6 @@ use App\Http\Resources\CompanyResource;
 
 class CompaniesController extends Controller
 {
-
-
     //To get details of all companies in database with GET request
     public function index()
     {
@@ -18,8 +16,6 @@ class CompaniesController extends Controller
 
         return CompanyResource :: collection($company);
     }
-
-    
 
     //To store details of new company in database with POST request
     public function store(Request $request)
@@ -68,7 +64,6 @@ class CompaniesController extends Controller
         $company->addr_line1 = $request->input('addr_line1');
         $company->addr_line2 = $request->input('addr_line2');
         $company->city = $request->input('city');
-        $company->country = $request->input('country');
         $company->zipcode = $request->input('zipcode');
 
         if($company->save()){
