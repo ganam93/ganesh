@@ -37,23 +37,27 @@ class CompaniesController extends Controller
         if($company->save()){
           return new CompanyResource($company);
         }
+        return response()->json(['error' => 'Something went wrong'], 500);
     }
 
     
     //To get details of particular company in database with GET request
-    public function show($cid)
+    public function show($id)
     {
-        $company = Company::findOrFail($cid);
-
-        return new CompanyResource($company);
+        $company = Company::findOrFail($id);
+        if($company){
+            return new CompanyResource($company);
+        }
+        return response()->json(['error' => 'Data not found'], 404);
+        
     }
 
 
 
     //To update details of particular company in database with PUT request
-    public function update(Request $request, $cid)
+    public function update(Request $request, $id)
     {
-        $company = Company::findOrFail($cid);
+        $company = Company::findOrFail($id);
 
         $company->cname = $request->input('cname');
         $company->country = $request->input('country');
@@ -69,6 +73,7 @@ class CompaniesController extends Controller
         if($company->save()){
           return new CompanyResource($company);
         }
+        return response()->json(['error' => 'User is not allowed to make chnages'], 403);
     }
 
     
@@ -81,5 +86,6 @@ class CompaniesController extends Controller
         if($company->delete()){
           echo 'success';
         }
+        return response()->json(['error' => 'Something went wrong'], 500);
     }
 }
