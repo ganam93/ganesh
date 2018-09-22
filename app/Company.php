@@ -6,5 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    protected $primaryKey = 'cid';
+    public function branch()
+    {
+        return $this->hasMany(Branch::class);
+    }
 }

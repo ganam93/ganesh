@@ -4,21 +4,18 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompaniesTable extends Migration
+class CreateBranches extends Migration
 {
     public function up()
     {
-        Schema::create('companies', function (Blueprint $table) {
+        Schema::create('branches', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('cname',100)->unique();
-            $table->string('pan',20)->unique();
-            $table->string('GST',20)->unique();
-            $table->string('reg_no',20)->unique();
-            $table->string('website',50)->nullable();
-            $table->text('addr_line1')->nullable();
+            $table->unsignedInteger('company_id')->references('id')->on('companies');
+            $table->text('addr_line1');
             $table->text('addr_line2')->nullable();
             $table->string('city',20);        
-            $table->string('country',20);
+            $table->string('state',20);
+            $table->string('country',10);
             $table->string('zipcode',10);
             $table->timestamps();
         });
@@ -31,6 +28,6 @@ class CreateCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('companies');
+        //
     }
 }
