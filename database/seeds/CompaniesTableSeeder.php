@@ -6,6 +6,6 @@ class CompaniesTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(App\Company::class, 10)->create();
+        factory(App\API_Models\Company::class, 10)->create();
     }
 }

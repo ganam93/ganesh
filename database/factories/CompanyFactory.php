@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Company::class, function (Faker $faker) {
+$factory->define(App\API_Models\Company::class, function (Faker $faker) {
     return [
         'cname' => $faker->text(20),
         'country' => $faker->text(20),
