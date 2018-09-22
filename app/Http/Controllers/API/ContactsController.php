@@ -36,7 +36,9 @@ class ContactsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $contact = new Contact;
+        $result = $contact::create($request->except('_token'));
+        return result;
     }
 
     /**

@@ -15,8 +15,8 @@ class CompanyResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'cname' => $this->cname,
+            'company_id' => $this->id,
+            'company_name' => $this->cname,
             'country' => $this->country,
             'pan' => $this->pan,
             'GST'=> $this->GST,
@@ -27,7 +27,7 @@ class CompanyResource extends JsonResource
             'city'=> $this->city,
             'country'=> $this->country,
             'zipcode'=> $this->zipcode,
-            'contact' => $this->contact,
+            'contact' => ContactResource :: collection($this->contact),
             'branch' => $this->branch
         ];
     }
