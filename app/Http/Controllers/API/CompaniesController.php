@@ -54,7 +54,11 @@ class CompaniesController extends Controller
     //To update details of particular company in database with PUT request
     public function update(Request $request, $id)
     {
-        $company = Company::findOrFail($id);
+        $company = Company::find($id);
+
+        if($company==null){
+            return response()->json(['error' => 'Data not found'], 404);
+        }
 
         $company->cname = $request->input('cname');
         $company->country = $request->input('country');
