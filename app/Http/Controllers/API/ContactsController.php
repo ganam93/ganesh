@@ -93,6 +93,6 @@ class ContactsController extends Controller
         if($company->delete()){
           return response()->json(['Result' => 'Suceess'], 200);
         }
-        return response()->json(['error' => 'Something went wrong'], 500)
+        return response()->json(['error' => 'Something went wrong'], 500);
     }
 }
