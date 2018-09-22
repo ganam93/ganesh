@@ -15,14 +15,10 @@ class CreateSensorsTable extends Migration
             $table->string('location');
             $table->unsignedInteger('company_id')->references('id')->on('companies');
             $table->unsignedInteger('branch_id')->references('id')->on('branches');
+            $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('sensors');

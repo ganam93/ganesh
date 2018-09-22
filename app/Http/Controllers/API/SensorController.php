@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Sensor;
+use App\API_Models\Sensor;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class SensorController extends Controller
@@ -24,7 +25,9 @@ class SensorController extends Controller
      */
     public function create()
     {
-        //
+        $sensor = Sensor::all();
+
+        return SensorResource :: collection($company);
     }
 
     /**

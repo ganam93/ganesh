@@ -3,6 +3,7 @@
 namespace App\API_Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\API_Models\Contact;
 
 class Branch extends Model
 {
@@ -14,7 +15,7 @@ class Branch extends Model
 
     public function contact()
     {
-        return $this->hasMany(API/Contact::class);
+        return $this->hasMany(Contact::class);
     }
     
 }

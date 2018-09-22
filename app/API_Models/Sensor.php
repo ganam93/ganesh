@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sensor extends Model
 {
-    //
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
+    }
 }
