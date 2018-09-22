@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Company;
+use App\API_Models\Company;
 use App\Http\Resources\CompanyResource;
 
 class CompaniesController extends Controller
@@ -21,6 +21,7 @@ class CompaniesController extends Controller
     public function store(Request $request)
     {
         $company = new Company;
+        //$comp = $company::create($request->except('_token'));
         $company->cname = $request->input('cname');
         $company->pan = $request->input('pan');
         $company->GST = $request->input('GST');
@@ -35,6 +36,9 @@ class CompaniesController extends Controller
         if($company->save()){
           return new CompanyResource($company);
         }
+
+        return $companyDetails;
+
         return response()->json(['error' => 'Something went wrong'], 500);
     }
 
@@ -42,14 +46,13 @@ class CompaniesController extends Controller
     //To get details of particular company in database with GET request
     public function show($id)
     {
-        $company = Company::findOrFail($id);
+        $company = Company::find($id);
         if($company){
             return new CompanyResource($company);
         }
         return response()->json(['error' => 'Data not found'], 404);
         
     }
-
 
     //To update details of particular company in database with PUT request
     public function update(Request $request, $id)

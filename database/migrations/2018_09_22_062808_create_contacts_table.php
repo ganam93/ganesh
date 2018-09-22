@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVisitorsTable extends Migration
+class CreateContactsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,16 @@ class CreateVisitorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('visitors', function (Blueprint $table) {
+        Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('id_card');
-            $table->string('name',20);     
-            $table->unsignedInteger('contact');
-            $table->unsignedInteger('check_in');
-            $table->unsignedInteger('check_out');
+            $table->string('name',30);
+            $table->string('designation',20);
+            $table->string('mobile_no',15);
+            $table->string('landline_no',15);
+            $table->string('email')->unique();
             $table->unsignedInteger('company_id')->references('id')->on('companies');
-            $table->unsignedInteger('id')->references('id')->on('branches');
-            $table->timestamps();
+            $table->unsignedInteger('branch_id')->references('id')->on('branches');
+
             
         });
     }
@@ -34,6 +34,6 @@ class CreateVisitorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('visitors');
+        Schema::dropIfExists('contacts');
     }
 }

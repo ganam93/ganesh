@@ -4,82 +4,89 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\API_Models\Branch;
+use App\Http\Resources\BranchResource;
 
 class BranchesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function index()
     {
-        //
+        $branch = Branch::all();
+
+        return BranchResource :: collection($branch);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+  
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+ 
     public function store(Request $request)
     {
-        //
+        $branch = new Branch;
+        //$comp = $company::create($request->except('_token'));
+        $branch->company_id = $request->input('company_id');
+        $branch->addr_line1 = $request->input('addr_line1');
+        $branch->addr_line2 = $request->input('addr_line2');
+        $branch->city = $request->input('city');
+        $branch->state = $request->input('state');
+        $branch->country = $request->input('country');
+        $branch->zipcode = $request->input('zipcode');
+
+        if($branch->save()){
+          return new BranchResource($branch);
+        }
+
+        return response()->json(['error' => 'Something went wrong'], 500);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+  
     public function show($id)
     {
-        //
+        $branch = Branch::find($id);
+        if($branch){
+            return new BranchResource($branch);
+        }
+        return response()->json(['error' => 'Data not found'], 404);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function update(Request $request, $id)
     {
-        //
+        $branch = Branch::findOrFail($id);
+        $branch->company_id = $request->input('company_id');
+        $branch->addr_line1 = $request->input('addr_line1');
+        $branch->addr_line2 = $request->input('addr_line2');
+        $branch->city = $request->input('city');
+        $branch->state = $request->input('state');
+        $branch->country = $request->input('country');
+        $branch->zipcode = $request->input('zipcode');
+
+        if($branch->save()){
+          return new BranchResource($branch);
+        }
+
+        return response()->json(['error' => 'Something went wrong'], 500);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
-        //
+        $branch = Branch::findOrFail($id);
+
+        if($branch->delete()){
+          return response()->json(['Success' => 'True'], 500);
+        }
+        else
+            return response()->json(['error' => 'Something went wrong'], 500);
     }
 }
