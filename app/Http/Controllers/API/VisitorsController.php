@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class VisitorsController extends Controller
 {
-    /* 
+    
     //To get details of all visitors in database with GET request
     public function index()
     {
@@ -15,26 +15,24 @@ class VisitorsController extends Controller
 
         return VisitorsResource :: collection($visitors);
 }
-To store details of new visitors in database with POST request
+//To store details of new visitors in database with POST request
 public function store(Request $request)
 {
     $visitors = new visitors;
-    $visitors->sr_no = $request->input('sr_no');
-    $company->id_card = $request->input('id_card');
-    $company->GST = $request->input('GST');
-    $company->reg_no = $request->input('reg_no');
-    $company->website = $request->input('website');
-    $company->addr_line1 = $request->input('addr_line1');
-    $company->addr_line2 = $request->input('addr_line2');
-    $company->city = $request->input('city');
-    $company->country = $request->input('country');
-    $company->zipcode = $request->input('zipcode');
+    $visitors->id = $request->input('id');
+    $visitors->id_card = $request->input('id_card');
+    $visitors->name = $request->input('name');
+    $visitors->contact = $request->input('contact');
+    $visitors->check_in = $request->input('check_in');
+    $visitors->check_out = $request->input('check_out');
+    $visitors->company_id = $request->input('company_id');
+    $visitors->Branch_id = $request->input('Branch_id');
 
     if($company->save()){
-      return new CompanyResource($company);
+      return new VisitorsResource($visitors);
     }
     return response()->json(['error' => 'Something went wrong'], 500);
-}*/
+}
 
 }
 

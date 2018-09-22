@@ -12,7 +12,7 @@ $factory->define(App\API_Models\Company::class, function (Faker $faker) {
         'addr_line1'=> $faker->word,
         'addr_line2'=> $faker->word,
         'city'=> $faker->city,
-        'country'=> $faker->country,
+        'country'=> $faker->text(15),
         'zipcode'=> $faker->numberBetween(100000,999999)
     ];
 });

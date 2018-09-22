@@ -21,7 +21,7 @@ class CreateVisitorsTable extends Migration
             $table->unsignedInteger('check_in');
             $table->unsignedInteger('check_out');
             $table->unsignedInteger('company_id')->references('id')->on('companies');
-            $table->unsignedInteger('id')->references('id')->on('branches');
+            $table->unsignedInteger('Branch_id')->references('id')->on('branches');
             $table->timestamps();
             
         });
