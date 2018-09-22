@@ -16,12 +16,13 @@ class CreateContactsTable extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',30);
-            $table->string('designation',20);
-            $table->string('mobile_no',15);
-            $table->string('landline_no',15);
+            $table->string('designation',40);
+            $table->string('mobile_no',40);
+            $table->string('landline_no',40);
             $table->string('email')->unique();
             $table->unsignedInteger('company_id')->references('id')->on('companies');
             $table->unsignedInteger('branch_id')->references('id')->on('branches');
+            $table->timestamps();
 
             
         });
