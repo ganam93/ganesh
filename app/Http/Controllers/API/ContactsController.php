@@ -5,80 +5,63 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\API_Models\Contact;
+use App\Http\Resources\ContactResource;
 
 class ContactsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-        //
+        $contact = Contact::all();
+
+        return ContactResource :: collection($contact);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        $contact = new Contact;
+        //$comp = $company::create($request->except('_token'));
+        $contact->name = $request->input('name');
+        $contact->designation = $request->input('designation');
+        $contact->mobile_no = $request->input('mobile_no');
+        $contact->landline_no = $request->input('landline_no');
+        $contact->email = $request->input('email');
+        $contact->company_id = $request->input('company_id');
+        $contact->branch_id = $request->input('branch_id');
+
+        if($contact->save()){
+          return new ContactResource($contact);
+        }
+
+        return response()->json(['error' => 'Something went wrong'], 500);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         //

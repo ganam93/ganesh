@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
+
+	protected $fillable = ['name','designation','mobile_no','landline_no','email','company_id','branch_id'];
+
     public function company()
     {
         return $this->belongsTo(Company::class);

@@ -15,7 +15,7 @@ class BranchResource extends JsonResource
             'city'=> $this->city,
             'country'=> $this->country,
             'zipcode'=> $this->zipcode,
-            'contact' => $this->contact
+            'contact' => ContactResource :: collection($this->contact)
         ];
     }
 }
