@@ -21,8 +21,6 @@ class CompaniesController extends Controller
     public function store(Request $request)
     {
         $company = new Company;
-
-
         $company->cname = $request->input('cname');
         $company->pan = $request->input('pan');
         $company->GST = $request->input('GST');
@@ -49,7 +47,6 @@ class CompaniesController extends Controller
     }
 
 
-
     //To update details of particular company in database with PUT request
     public function update(Request $request, $cid)
     {
@@ -72,7 +69,6 @@ class CompaniesController extends Controller
     }
 
     
-
     //To delete  details of a companay from database with DELETE request
     public function destroy($cid)
     {
