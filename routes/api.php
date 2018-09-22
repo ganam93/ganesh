@@ -11,3 +11,5 @@ Route::resource('/company', 'API\CompaniesController');
 Route::resource('/branch', 'API\BranchesController');
 
 Route::resource('/contact', 'API\ContactsController');
+
+Route::resource('/Sensor', 'API\SensorsController');

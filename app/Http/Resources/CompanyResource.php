@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\API_Models\Contact;
 
 class CompanyResource extends JsonResource
 {
@@ -27,8 +28,10 @@ class CompanyResource extends JsonResource
             'city'=> $this->city,
             'country'=> $this->country,
             'zipcode'=> $this->zipcode,
-            'contact' => ContactResource :: collection($this->contact),
-            'branch' => $this->branch
+            'contact' => ContactResource :: collection(Contact::where('company_id', $this->id)
+                ->where('branch_id', 0)
+                ->get()),
+            'branch' => BranchResource :: collection($this->branch)
         ];
     }
 }
