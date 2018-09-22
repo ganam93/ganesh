@@ -27,6 +27,7 @@ class CompanyResource extends JsonResource
             'city'=> $this->city,
             'country'=> $this->country,
             'zipcode'=> $this->zipcode,
+            'contact' => $this->contact,
             'branch' => $this->branch
         ];
     }

@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\API_Models\Branch;
 
 class BranchesTableSeeder extends Seeder
 {
     public function run()
     {
-        factory(App\API_Models\Branch::class, 10)->create();
+        factory(Branch::class, 10)->create();
     }
 }

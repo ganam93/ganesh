@@ -14,15 +14,14 @@ class BranchResource extends JsonResource
      */
     public function toArray($request)
     {
-        return [
-            'id' => $this->id,
-            'company_id'=>$this->company_id,
+        return[
+            'branch_id' => $this->branch_id,
             'addr_line1'=> $this->addr_line1,
             'addr_line2'=> $this->addr_line2,
             'city'=> $this->city,
-            'state'=>$this->state,
             'country'=> $this->country,
             'zipcode'=> $this->zipcode,
+            'company' => $this->company
         ];
     }
 }
