@@ -8,12 +8,11 @@ use Illuminate\Http\Request;
 use App\Http\Resources\SensorResource;
 
 
-class SensorController extends Controller
+class SensorsController extends Controller
 {
     public function index()
     {
         $sensor = Sensor::all();
-
         return $sensor;
     }
 
