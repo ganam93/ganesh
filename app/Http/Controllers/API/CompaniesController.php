@@ -13,7 +13,6 @@ class CompaniesController extends Controller
     public function index()
     {
         $company = Company::all();
-
         return CompanyResource :: collection($company);
     }
 
@@ -36,8 +35,6 @@ class CompaniesController extends Controller
         if($company->save()){
           return new CompanyResource($company);
         }
-
-        return $companyDetails;
 
         return response()->json(['error' => 'Something went wrong'], 500);
     }
