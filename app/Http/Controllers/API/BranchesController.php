@@ -27,7 +27,6 @@ class BranchesController extends Controller
     public function store(Request $request)
     {
         $branch = new Branch;
-        //$comp = $company::create($request->except('_token'));
         $branch->company_id = $request->input('company_id');
         $branch->addr_line1 = $request->input('addr_line1');
         $branch->addr_line2 = $request->input('addr_line2');

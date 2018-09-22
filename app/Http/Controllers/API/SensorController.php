@@ -5,84 +5,78 @@ namespace App\Http\Controllers\API;
 use App\API_Models\Sensor;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Resources\SensorResource;
+
 
 class SensorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
     {
         $sensor = Sensor::all();
 
-        return SensorResource :: collection($company);
+        return SensorResource :: collection($sensor);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    public function create()
+    {
+        //
+    }
+
     public function store(Request $request)
     {
-        //
+        $sensor = new Sensor;
+        $sensor->manufacturer = $request->input('manufacturer');
+        $sensor->model = $request->input('model');
+        $sensor->location = $request->input('location');
+        $sensor->company_id = $request->input('company_id');
+        $sensor->branch_id = $request->input('branch_id');
+
+        if($sensor->save()){
+          return new SensorResource($sensor);
+        }
+
+        return response()->json(['error' => 'Something went wrong'], 500);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Sensor  $sensor
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Sensor $sensor)
+    public function show($id)
     {
-        //
+        $sensor = Sensor::find($id);
+        if($sensor){
+            return new SensorResource($sensor);
+        }
+        return response()->json(['error' => 'Data not found'], 404);
+        
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Sensor  $sensor
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Sensor $sensor)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sensor  $sensor
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Sensor $sensor)
+    public function update(Request $request, $id)
     {
-        //
+        $company = Company::findOrFail($id);
+        $sensor->manufacturer = $request->input('manufacturer');
+        $sensor->model = $request->input('model');
+        $sensor->location = $request->input('location');
+        $sensor->company_id = $request->input('company_id');
+        $sensor->branch_id = $request->input('branch_id');
+
+        if($sensor->save()){
+          return new SensorResource($sensor);
+        }
+
+        return response()->json(['error' => 'Something went wrong'], 500);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Sensor  $sensor
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Sensor $sensor)
+    public function destroy($id)
     {
-        //
+        $sensor = Sensor::findOrFail($id);
+
+        if($sensor->delete()){
+          return response()->json(['Success' => 'True'], 500);
+        }
+        else
+            return response()->json(['error' => 'Something went wrong'], 500);
     }
 }
