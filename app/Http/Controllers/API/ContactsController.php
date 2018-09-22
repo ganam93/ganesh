@@ -4,9 +4,9 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\API_Models\Branch;
+use App\API_Models\Contact;
 
-class BranchesController extends Controller
+class ContactsController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\API_Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,4 +10,10 @@ class Company extends Model
     {
         return $this->hasMany(Branch::class);
     }
+
+    public function contact()
+    {
+        return $this->hasMany(Contact::class);
+    }
+
 }

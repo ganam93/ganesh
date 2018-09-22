@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Company;
+use App\API_Models\Company;
 use App\Http\Resources\CompanyResource;
 
 class CompaniesController extends Controller
