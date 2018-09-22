@@ -8,8 +8,8 @@ $factory->define(App\API_Models\Branch::class, function (Faker $faker) {
         'addr_line1' => $faker->text(20),
         'addr_line2'=> $faker->text(20),
         'city'=> $faker->text(20),
-        'state'=> $faker->text(5),
-        'country'=> $faker->text(5),
+        'state'=> $faker->text(50),
+        'country'=> $faker->text(50),
         'zipcode'=> $faker->asciify('********')
     ];
 });
