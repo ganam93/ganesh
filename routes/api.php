@@ -12,4 +12,4 @@ Route::resource('/branch', 'API\BranchesController');
 
 Route::resource('/contact', 'API\ContactsController');
 
-Route::resource('/Sensor', 'API\SensorsController');
+Route::resource('/sensor', 'API\SensorsController');

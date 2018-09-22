@@ -14,7 +14,7 @@ class SensorController extends Controller
     {
         $sensor = Sensor::all();
 
-        return SensorResource :: collection($sensor);
+        return $sensor;
     }
 
     public function create()
