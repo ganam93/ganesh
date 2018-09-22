@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\API_Models\Contact;
 
 class CompanyResource extends JsonResource
 {
@@ -15,8 +16,8 @@ class CompanyResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'cname' => $this->cname,
+            'company_id' => $this->id,
+            'company_name' => $this->cname,
             'country' => $this->country,
             'pan' => $this->pan,
             'GST'=> $this->GST,
@@ -27,8 +28,10 @@ class CompanyResource extends JsonResource
             'city'=> $this->city,
             'country'=> $this->country,
             'zipcode'=> $this->zipcode,
-            'contact' => $this->contact,
-            'branch' => $this->branch
+            'contact' => ContactResource :: collection(Contact::where('company_id', $this->id)
+                ->where('branch_id', 0)
+                ->get()),
+            'branch' => BranchResource :: collection($this->branch)
         ];
     }
 }

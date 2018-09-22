@@ -6,9 +6,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('/Company', 'API\CompaniesController');
+Route::resource('/company', 'API\CompaniesController');
 
 Route::resource('/Branch', 'API\BranchesController');
 
 Route::resource('/Visitor', 'API\VisitorsController');
 
+Route::resource('/branch', 'API\BranchesController');
+
+Route::resource('/contact', 'API\ContactsController');
+
+Route::resource('/Sensor', 'API\SensorsController');

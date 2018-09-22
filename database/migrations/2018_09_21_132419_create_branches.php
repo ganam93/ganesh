@@ -15,7 +15,7 @@ class CreateBranches extends Migration
             $table->text('addr_line2')->nullable();
             $table->string('city',20);        
             $table->string('state',20);
-            $table->string('country',10);
+            $table->string('country',40);
             $table->string('zipcode',10);
             $table->timestamps();
         });
