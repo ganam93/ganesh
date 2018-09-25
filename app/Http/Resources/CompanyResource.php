@@ -28,6 +28,9 @@ class CompanyResource extends JsonResource
                 ->where('branch_id', 0)
                 ->get()),
             'branch' => BranchResource :: collection($this->branch),
+            'sensor' => SensorResource :: collection($this->sensor),
+            'idcard' => IdcardResource :: collection($this->idcard)
+
         ];
     }
 }
