@@ -13,6 +13,6 @@ class Visitor extends Model
 
     public function branch()
     {
-        return $this->belongsTo(Branches::class);
+        return $this->belongsTo(Branch::class);
     }
 }

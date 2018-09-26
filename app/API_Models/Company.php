@@ -27,4 +27,9 @@ class Company extends Model
     {
         return $this->hasMany(Idcard::class);
     }
+
+    public function visitor()
+    {
+        return $this->hasMany(Visitor::class);
+    }
 }
