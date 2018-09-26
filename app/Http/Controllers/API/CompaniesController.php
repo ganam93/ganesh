@@ -78,7 +78,6 @@ class CompaniesController extends Controller
     }
 
     
-
     //To delete  details of a companay from database with DELETE request
     public function destroy($cid)
     {

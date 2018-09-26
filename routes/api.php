@@ -10,6 +10,8 @@ Route::resource('/Company', 'API\CompaniesController');
 
 Route::resource('/Branch', 'API\BranchesController');
 
+Route::resource('/visitors', 'API\VisitorsController');
+
 Route::resource('/Contact', 'API\ContactsController');
 
 Route::resource('/Sensor', 'API\SensorsController');
