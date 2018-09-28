@@ -1,4 +1,8 @@
-<!doctype html>
+
+
+<!--doctype html-->
+
+
 <html lang="{{ app()->getLocale() }}">
     <head>
         <meta charset="utf-8">
@@ -7,10 +11,10 @@
 
         <title>Laravel</title>
 
-        <!-- Fonts -->
+        
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles -->
+        
         <style>
             html, body {
                 background-color: #fff;

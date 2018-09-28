@@ -76,8 +76,6 @@ class CompaniesController extends Controller
         }
         return response()->json(['error' => 'User is not allowed to make chnages'], 403);
     }
-
-    
     //To delete  details of a companay from database with DELETE request
     public function destroy($cid)
     {
