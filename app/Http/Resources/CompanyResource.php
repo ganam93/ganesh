@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\API_Models\Contact;
 use App\API_Models\Sensor;
-
+use App\API_Models\Visitor;
 
 class CompanyResource extends JsonResource
 {
@@ -28,6 +28,9 @@ class CompanyResource extends JsonResource
                 ->where('branch_id', 0)
                 ->get()),
             'branch' => BranchResource :: collection($this->branch),
+            'sensor' => SensorResource :: collection($this->sensor),
+            'idcard' => IdcardResource :: collection($this->idcard),
+            'visitor' => VisitorResource :: collection($this->visitor)
         ];
     }
 }

@@ -8,8 +8,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('/Company', 'API\CompaniesController');
 
-Route::resource('/branch', 'API\BranchesController');
+Route::resource('/Branch', 'API\BranchesController');
 
-Route::resource('/contact', 'API\ContactsController');
+Route::resource('/visitors', 'API\VisitorsController');
 
-Route::resource('/sensor', 'API\SensorsController');
+Route::resource('/Contact', 'API\ContactsController');
+
+Route::resource('/Sensor', 'API\SensorsController');
+
+Route::resource('/Idcard', 'API\IdcardsController');
