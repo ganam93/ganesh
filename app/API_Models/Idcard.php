@@ -4,7 +4,7 @@ namespace App\API_Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Visitor extends Model
+class Idcard extends Model
 {
     public function company()
     {

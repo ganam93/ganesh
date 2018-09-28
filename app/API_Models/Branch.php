@@ -17,5 +17,19 @@ class Branch extends Model
     {
         return $this->hasMany(Contact::class);
     }
+
+    public function sensor()
+    {
+        return $this->hasMany(Sensor::class);
+    }
+
+    public function idcard()
+    {
+        return $this->hasMany(Idcard::class);
+    }
     
+    public function visitor()
+    {
+        return $this->hasMany(Visitor::class);
+    }
 }

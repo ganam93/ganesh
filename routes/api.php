@@ -6,7 +6,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::resource('/company', 'API\CompaniesController');
+Route::resource('/Company', 'API\CompaniesController');
 
 Route::resource('/branch', 'API\BranchesController');
 
@@ -14,4 +14,6 @@ Route::resource('/visitors', 'API\VisitorsController');
 
 Route::resource('/contact', 'API\ContactsController');
 
-Route::resource('/sensor', 'API\SensorsController');
+Route::resource('/Sensor', 'API\SensorsController');
+
+Route::resource('/Idcard', 'API\IdcardsController');

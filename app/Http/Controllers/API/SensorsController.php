@@ -8,13 +8,12 @@ use Illuminate\Http\Request;
 use App\Http\Resources\SensorResource;
 
 
-class SensorController extends Controller
+class SensorsController extends Controller
 {
     public function index()
     {
         $sensor = Sensor::all();
-
-        return SensorResource :: collection($sensor);
+        return $sensor;
     }
 
     public function create()
@@ -55,7 +54,7 @@ class SensorController extends Controller
 
     public function update(Request $request, $id)
     {
-        $company = Company::findOrFail($id);
+        $sensor = Sensor::findOrFail($id);
         $sensor->manufacturer = $request->input('manufacturer');
         $sensor->model = $request->input('model');
         $sensor->location = $request->input('location');

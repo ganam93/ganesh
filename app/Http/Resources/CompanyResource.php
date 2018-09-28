@@ -4,15 +4,11 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\API_Models\Contact;
+use App\API_Models\Sensor;
+use App\API_Models\Visitor;
 
 class CompanyResource extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array
-     */
     public function toArray($request)
     {
         return [
@@ -31,7 +27,10 @@ class CompanyResource extends JsonResource
             'contact' => ContactResource :: collection(Contact::where('company_id', $this->id)
                 ->where('branch_id', 0)
                 ->get()),
-            'branch' => BranchResource :: collection($this->branch)
+            'branch' => BranchResource :: collection($this->branch),
+            'sensor' => SensorResource :: collection($this->sensor),
+            'idcard' => IdcardResource :: collection($this->idcard),
+            'visitor' => VisitorResource :: collection($this->visitor)
         ];
     }
 }

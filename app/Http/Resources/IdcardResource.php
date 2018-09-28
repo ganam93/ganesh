@@ -3,16 +3,16 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\API_Models\Sensor;
 
-class SensorResource extends JsonResource
+class IdcardResource extends JsonResource
 {
     public function toArray($request)
     {
         return[
-            'manufacturer' => $this->manufacturer,
-            'model'=> $this->model,
-            'location'=> $this->location,
+            'major' => $this->major,
+            'minor'=> $this->minor,
+            'issued_date'=> $this->issued_date,
+            'expiry_date'=> $this->expiry_date,
             'company_id'=> $this->company_id,
             'branch_id'=> $this->branch_id ,
 

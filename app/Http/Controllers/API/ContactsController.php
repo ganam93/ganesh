@@ -14,7 +14,13 @@ class ContactsController extends Controller
     {
         $contact = Contact::all();
 
-        return $contact;
+        if($contact){
+            return $contact;
+        }
+        else{
+            return "Data not found";
+        }
+
     }
 
 
