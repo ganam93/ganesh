@@ -11,9 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+
+Route::prefix('manage')->middleware('role:superadministrator')
+	->group(function (){
+		Route::get('/','ManageController@index');
+
+	});
 
 Route::resource('companies','CompanyController');
 
