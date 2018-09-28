@@ -12,12 +12,10 @@
                         @csrf
 
                         <div class="form-group row">
-
                             <label for="username" class="col-sm-4 col-form-label text-md-right">{{ __('Username') }}</label>
 
                             <div class="col-md-6">
                                 <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" required autofocus>
-
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">

@@ -3,7 +3,8 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\API_Models\Sensor;
+use App\API_Models\Company;
+
 
 class SensorResource extends JsonResource
 {

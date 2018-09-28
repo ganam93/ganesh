@@ -54,7 +54,7 @@ class SensorsController extends Controller
 
     public function update(Request $request, $id)
     {
-        $sensor = Sensor::findOrFail($id);
+        $company = Company::findOrFail($id);
         $sensor->manufacturer = $request->input('manufacturer');
         $sensor->model = $request->input('model');
         $sensor->location = $request->input('location');
