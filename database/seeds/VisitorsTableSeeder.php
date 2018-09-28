@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-use App\API_Models\Visitor;
+use App\API_Models\Visitors;
 class VisitorsTableSeeder extends Seeder
 {
     /**
@@ -12,6 +12,6 @@ class VisitorsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Visitor::class, 10)->create();
+        factory(Visitors::class, 10)->create();
     }
 }

@@ -1,7 +1,7 @@
 <?php
 use Faker\Generator as Faker;
 
-$factory->define(App\API_Models\Visitor::class, function (Faker $faker) {
+$factory->define(App\API_Models\Visitors::class, function (Faker $faker) {
     return [
         'id_card' => $faker->word,
         'name'=> $faker->word,
