@@ -140,7 +140,7 @@
                     </li>
 
                     <li>
-                    <a href="">
+                    <a href="/users">
                         <i class="fa fa-user"></i> <span style="margin:4px">Users</span>
                     </a>
                     </li>
