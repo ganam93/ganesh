@@ -1,5 +1,7 @@
 @extends('layouts.sidebar')
-
+@section('title')
+    Add Company
+@endsection
 @section('content')
 <!-- Horizontal Form -->
 <div class="box box-info" style="margin:16px">

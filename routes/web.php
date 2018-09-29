@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/sidebar', 'HomeController@index1');
 
 Route::prefix('manage')->middleware('role:superadministrator')
 	->group(function (){
