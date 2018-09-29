@@ -2,8 +2,8 @@
 
 @section('content')
 <style>
-  .content{
-    min-height:0%;
+  .content {
+    min-height: 0px;
   }
   .small-box{
     border-radius: 5px;
@@ -11,10 +11,6 @@
     display: block;
     margin-bottom: 20px;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-  }
-  .main-footer{
-    margin-left:0px;
-    margin-bottom:0px;
   }
   .content-wrapper, .main-footer{
     margin-top: 0;
@@ -28,12 +24,12 @@
   </style>
 
         <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Dashboard
-            <small>Control panel</small>
-          </h1>
-        </section>
+    <section class="content-header">
+      <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>
+    </section>
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
@@ -230,13 +226,7 @@
 </div>
 <!-- /.content-wrapper -->
 </section>
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0.0
-    </div>
-    <strong>Copyright &copy; 2018-2019 <a href="#">Secure Lobby</a>.</strong> All rights
-    reserved.
-  </footer>
+
 </div>
 
 @endsection('content')
