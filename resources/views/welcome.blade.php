@@ -1,3 +1,9 @@
+
+
+<!--doctype html-->
+@include('Layouts.dashboard')
+
+
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
