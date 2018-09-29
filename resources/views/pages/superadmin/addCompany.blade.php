@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 @section('title')
-    Add Company
+    Add Company Details
 @endsection
 @section('content')
 <!-- Horizontal Form -->
