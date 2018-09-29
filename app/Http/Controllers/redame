@@ -1,0 +1,32 @@
+
+structure for controllers : 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    API |
+        ...
+
+    Auth |
+        ...
+
+    Subpages |
+        CompaniesController.php
+        ...
+
+    controller.php
+    PagesController.php
+
+
+
+(... specifies more files will be added)
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+NOTE : This might vary according to further requirements.
+
+All the pages that will be opened throgh sidebar will open through PagesController.
+All subpages e.g. 'Companies/addCompany' will open throgh their respective Controllers as we
+will need to pass the data also.
+
+check web.php in routes to understand why it is important.
+

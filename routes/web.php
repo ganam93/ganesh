@@ -13,12 +13,18 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::prefix('manage')->middleware('role:superadministrator')
+Route::prefix('/')->middleware('role:superadministrator|administrator')
 	->group(function (){
-		Route::get('/','ManageController@index');
+		Route::get('/users', 'PagesController@users');			
+		Route::prefix('/companies')->middleware('role:superadministrator')
+			->group(function (){
+				Route::get('/addCompany', 'HomeController@index');
+			});
 
 	});
-		
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
