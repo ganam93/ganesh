@@ -1,7 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>SecureLobby | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
@@ -47,41 +61,52 @@
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
                 <!-- Sidebar toggle button-->
-                    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                        <span class="sr-only">Toggle navigation</span>
-                    </a>
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
 
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav" style="font-size:24px;margin:8px;color:white">
+                    @yield('title')
+                </ul>
 
-                <!-- Right side of navbar -->
-                <div class="navbar-custom-menu" style="margin-right:10px">
+                <!-- Navbar Right Menu -->
+                <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
-            
-                        <!-- User name -->
-                        <li>
-                            <a>
-                                <span class="hidden-xs" style="font-size: 17px !important;"><strong>{{ Auth::user()->username }}</strong></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a `` href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <span class="glyphicon glyphicon-log-out" ></span> {{ __('Logout') }}
-                            </a>
+                        @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                @if (Route::has('register'))
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                @endif
+                            </li>
+                            @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </li>
+                                    {{ Auth::user()->username }} <span class="caret"></span>
 
-                        <!-- Log Out option -->
-                        <li>
-                        </li>
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
                     </ul>
-                </div>    
+                </div>
             </nav>
-
-             
+            
         </header>
 
         <!-- Left side column. contains the logo and sidebar -->
