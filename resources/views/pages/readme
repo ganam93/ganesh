@@ -1,0 +1,41 @@
+
+structure for views : 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    auth |
+        password |
+            email.blade.php
+            reset.blade.php
+        login.blade.php
+        register.blade.php
+        verify.blade.php
+
+    layouts |
+        app.blade.php (NOTE : rename sidebar as app and delete previous app.blade)
+
+    pages |
+        admin |
+            dashboard.blade.php
+            ...
+        superadmin |
+            dashboard.blade.php
+            companies.blade.php
+            addcompanies.blade.php
+            ...
+        users |
+            dashboard.blade.php
+            addvisitor.blade.php
+            ...
+        sensors.blade.php
+        idcards.blade.php
+        ...
+
+
+(... specifies more files will be added)
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+NOTE : This might vary according to further requirements.
+Keep user specific blade files in respective folder.
+
