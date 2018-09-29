@@ -155,8 +155,7 @@
             <!-- Content Header (Page header) -->
         <section class="content">
                 <!-- Main content -->
-          <!--  @yield('content') -->
-            @section('content')
+         @yield('content')
             <!-- /.content -->
         </section>
     <!-- ./wrapper -->
