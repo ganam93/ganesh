@@ -153,15 +153,23 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content">
+        <section class="content">
                 <!-- Main content -->
-            @yield('content')
+          <!--  @yield('content') -->
+            @section('content')
             <!-- /.content -->
-            </section>
-            
+        </section>
+    <!-- ./wrapper -->
+    <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2018-2019 <a href="#"> Secure Lobby </a>. </strong> All rights
+    reserved.
+  </footer>
         </div>
     </div>
-    <!-- ./wrapper -->
+
 
     <!-- jQuery 3 -->
     <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
