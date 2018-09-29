@@ -19,9 +19,7 @@ Route::prefix('manage')->middleware('role:superadministrator')
 		Route::get('/','ManageController@index');
 
 	});
-
-Route::resource('companies','CompanyController');
-
+		
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
