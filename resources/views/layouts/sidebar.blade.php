@@ -107,37 +107,37 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree" style="font-size:18px">
                     <li style="margin-top:14px">
-                    <a href="{{url('/dashboard')}}">
+                    <a href="{{url('/superadmin/dashboard')}}">
                         <i class="fa fa-home"></i> <span style="margin-top:4px">Dashboard</span>
                     </a>
                     </li>
 
                     <li>
-                    <a href="{{url('/companies')}}">
+                    <a href="{{url('/superadmin/companies')}}">
                         <i class="fa fa-building"></i> <span style="margin:4px">Companies</span>
                     </a>
                     </li>
 
                     <li>
-                    <a href="">
+                    <a href="{{url('/superadmin/visitors')}}">
                         <i class="fa fa-male"></i> <span style="margin:4px">Visitors</span>
                     </a>
                     </li>
 
                     <li>
-                    <a href="">
+                    <a href="{{url('/superadmin/idCards')}}">
                         <i class="fa fa-id-badge"></i> <span style="margin:4px">Id cards</span>
                     </a>
                     </li>
 
                     <li>
-                    <a href="">
+                    <a href="{{url('/superadmin/sensors')}}">
                         <i class="fa fa-wifi"></i> <span style="margin:4px">Sensors</span>
                     </a>
                     </li>
 
                     <li>
-                    <a href="/users">
+                    <a href="{{url('/superadmin/users')}}">
                         <i class="fa fa-user"></i> <span style="margin:4px">Users</span>
                     </a>
                     </li>

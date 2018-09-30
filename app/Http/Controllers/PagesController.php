@@ -13,40 +13,40 @@ class PagesController extends Controller
         $this->middleware('auth');
     }
 
-    public function dashboard()
+    public function superadmindashboard()
     {
     	return view('pages.superadmin.dashboard');
     }
 
-    public function companies()
+    public function superadmincompanies()
     {
     	return view('pages.superadmin.companies');
     }
 
-    public function addCompany()
+    public function superadminaddCompany()
     {
     	return view('pages.superadmin.addCompany');
     }
 
-    public function Visitors()
+    public function superadminvisitors()
     {
-    	return view('pages.visitors');
+    	return view('pages.superadmin.visitors');
     }
 
-    public function idcards()
+    public function superadminidcards()
     {
-    	
+    	return view('pages.superadmin.idcards');
     }
 
-    public function sensors()
+    public function superadminsensors()
     {
-    	
+    	return view('pages.superadmin.sensors');
     }
 
-    public function users()
+    public function superadminusers()
     {
         if(Auth::user()->hasRole('superadministrator')){
-            return view('pages.users');
+            return view('pages.superadmin.users');
         }
         else{
             return view('addCompany');

@@ -29,6 +29,11 @@ Route::prefix('/')->middleware('role:superadministrator|administrator')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/companies', 'PagesController@companies');
-Route::get('/addCompany', 'PagesController@addCompany');
-Route::get('/dashboard', 'PagesController@dashboard');
+Route::get('/superadmin/companies', 'PagesController@superadmincompanies');
+Route::get('/superadmin/addCompany', 'PagesController@superadminaddCompany');
+Route::get('/superadmin/dashboard', 'PagesController@superadmindashboard');
+Route::get('/superadmin/idCards', 'PagesController@superadminidCards');
+Route::get('/superadmin/sensors', 'PagesController@superadminsensors');
+Route::get('/superadmin/users', 'PagesController@superadminusers');
+Route::get('/superadmin/visitors', 'PagesController@superadminvisitors');
+

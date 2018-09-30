@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row form-group">
             <div class="card">
-                <a href="{{url('/addCompany')}}"><button type="button" class="btn btn-primary">Add Company</button>
+                <a href="{{url('/superadmin/addCompany')}}"><button type="button" class="btn btn-primary">Add Company</button></a>
             </div>
         </div>
 </div>

@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-lg-2 col-md-4 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <a href="{{url('/superadmin/companies')}}"><div class="small-box bg-aqua">
             <div class="inner">
               <h3>53</h3>
               <p>Companies</p>
@@ -37,12 +37,12 @@
               <i class="ion ion-stats-bars"></i>
             </div>
           <!--  <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> -->
-          </div>
+          </div></a>
         </div>
         <!-- ./col -->
         <div class="col-lg-2 col-md-4 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-green">
+          <a href="{{url('/superadmin/visitors')}}"><div class="small-box bg-green">
             <div class="inner">
               <h3>150</h3>
 
@@ -52,12 +52,12 @@
               <i class="ion ion-android-walk"></i>
             </div>
           <!--  <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> -->
-          </div>
+          </div></a>
         </div>
         <!-- ./col -->
         <div class="col-lg-2 col-md-4 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-yellow">
+          <a href="{{url('/superadmin/idCards')}}"><div class="small-box bg-yellow">
             <div class="inner">
               <h3>44</h3>
 
@@ -67,7 +67,7 @@
               <i class="ion ion-card"></i>
             </div>
           <!--  <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> -->
-          </div>
+          </div></a>
         </div>
         <!-- ./col -->
         <div class="col-lg-2 col-md-4 col-xs-6">
@@ -87,7 +87,7 @@
         <!-- ./col -->
         <div class="col-lg-2 col-md-4 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <a href="{{url('/superadmin/sensors')}}"><div class="small-box bg-red">
             <div class="inner">
               <h3>65</h3>
               <p>Sensors</p>
@@ -96,7 +96,7 @@
               <i class="ion ion-android-wifi"></i>
             </div>
           <!--  <a href="#" class="small-box-footer ">More info <i class="fa fa-arrow-circle-right"></i></a> -->
-          </div>
+          </div></a>
         </div>
       <div class="col-lg-2 col-md-4 col-xs-6">
           <!-- small box -->
