@@ -140,7 +140,7 @@
                     </li>
 
                     <li>
-                    <a href="">
+                    <a href="/users">
                         <i class="fa fa-user"></i> <span style="margin:4px">Users</span>
                     </a>
                     </li>
@@ -152,9 +152,20 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <section class="content">
-                @yield('content')
-            </section>
+            <!-- Content Header (Page header) -->
+        <section class="content">
+                <!-- Main content -->
+         @yield('content')
+            <!-- /.content -->
+        </section>
+    <!-- ./wrapper -->
+    <footer class="main-footer">
+    <div class="pull-right hidden-xs">
+      <b>Version</b> 2.4.0
+    </div>
+    <strong>Copyright &copy; 2018-2019 <a href="#"> Secure Lobby </a>. </strong> All rights
+    reserved.
+  </footer>
         </div>
     </div>
 
