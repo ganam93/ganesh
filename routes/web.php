@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/sidebar', 'HomeController@index1');
+Route::get('/sidebar', 'HomeController@index');
 
 Route::prefix('manage')->middleware('role:superadministrator')
 	->group(function (){
@@ -23,3 +23,4 @@ Route::prefix('manage')->middleware('role:superadministrator')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/companies', 'PagesController@companies');

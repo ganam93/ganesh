@@ -3,8 +3,8 @@
     Add Company Details
 @endsection
 @section('content')
-<!-- Horizontal Form -->
-<div class="box box-info" style="margin:16px">
+    <!-- Horizontal Form -->
+    <div class="box box-info" style="margin:16px">
         <div class="box-header with-border">
           <h3 class="box-title">Add Company</h3>
         </div>
@@ -93,6 +93,5 @@
           </div>
           <!-- /.box-footer -->
         </form>
-      </div>
-      <!-- /.box -->
-@endsection('content')
+    </div>
+@endsection

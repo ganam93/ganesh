@@ -116,7 +116,7 @@
                     </li>
 
                     <li>
-                    <a href="">
+                    <a href="{{url('/companies')}}">
                         <i class="fa fa-building"></i> <span style="margin:4px">Companies</span>
                     </a>
                     </li>
@@ -152,24 +152,11 @@
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-        <section class="content">
-                <!-- Main content -->
-          <!--  @yield('content') -->
-            @section('content')
-            <!-- /.content -->
-        </section>
-    <!-- ./wrapper -->
-    <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2018-2019 <a href="#"> Secure Lobby </a>. </strong> All rights
-    reserved.
-  </footer>
+            <section class="content">
+                @yield('content')
+            </section>
         </div>
     </div>
-
 
     <!-- jQuery 3 -->
     <script src="{{asset('admin/bower_components/jquery/dist/jquery.min.js')}}"></script>
