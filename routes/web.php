@@ -30,3 +30,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/companies', 'PagesController@companies');
+Route::get('/addCompany', 'PagesController@addCompany');
+Route::get('/dashboard', 'PagesController@dashboard');

@@ -1,4 +1,4 @@
-@extends('Layouts.sidebar')
+@extends('layouts.sidebar')
 
 @section('content')
 <style>
@@ -22,14 +22,6 @@
     padding: 20px;
 }
   </style>
-
-        <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-    </section>
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
@@ -229,4 +221,4 @@
 
 </div>
 
-@endsection('content')
+@endsection

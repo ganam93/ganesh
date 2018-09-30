@@ -15,12 +15,17 @@ class PagesController extends Controller
 
     public function dashboard()
     {
-    	
+    	return view('pages.superadmin.dashboard');
     }
 
     public function companies()
     {
-    	return view('pages.superadmin.comapnies');
+    	return view('pages.superadmin.companies');
+    }
+
+    public function addCompany()
+    {
+    	return view('pages.superadmin.addCompany');
     }
 
     public function Visitors()

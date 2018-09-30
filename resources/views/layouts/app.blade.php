@@ -76,19 +76,8 @@
                         <!-- User name -->
                         <li>
                             <a>
-                                <span class="hidden-xs" style="font-size: 17px !important;"><strong>{{Auth::user()->username}}</strong></span>
+                                <span class="hidden-xs" style="font-size: 17px !important;"><strong>{{Auth::user()}}</strong></span>
                             </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        <span class="glyphicon glyphicon-log-out" ></span> {{ __('Logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
                         </li>
 
                         <!-- Log Out option -->
@@ -107,37 +96,37 @@
                 <!-- sidebar menu: : style can be found in sidebar.less -->
                 <ul class="sidebar-menu" data-widget="tree" style="font-size:18px">
                     <li style="margin-top:14px">
-                    <a href="{{url('/dashboard')}}">
+                    <a href="#">
                         <i class="fa fa-home"></i> <span style="margin-top:4px">Dashboard</span>
                     </a>
                     </li>
 
                     <li>
-                    <a href="{{url('/companies')}}">
+                    <a href="#">
                         <i class="fa fa-building"></i> <span style="margin:4px">Companies</span>
                     </a>
                     </li>
 
                     <li>
-                    <a href="">
+                    <a href="#">
                         <i class="fa fa-male"></i> <span style="margin:4px">Visitors</span>
                     </a>
                     </li>
 
                     <li>
-                    <a href="">
+                    <a href="#">
                         <i class="fa fa-id-badge"></i> <span style="margin:4px">Id cards</span>
                     </a>
                     </li>
 
                     <li>
-                    <a href="">
+                    <a href="#">
                         <i class="fa fa-wifi"></i> <span style="margin:4px">Sensors</span>
                     </a>
                     </li>
 
                     <li>
-                    <a href="/users">
+                    <a href="#">
                         <i class="fa fa-user"></i> <span style="margin:4px">Users</span>
                     </a>
                     </li>
@@ -151,7 +140,7 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content">
-                <!-- Main content -->
+                    <!-- Main content -->
                 @yield('content')
                 <!-- /.content -->
             </section>
