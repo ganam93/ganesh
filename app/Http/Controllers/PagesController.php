@@ -38,9 +38,19 @@ class PagesController extends Controller
     	return view('pages.superadmin.idcards');
     }
 
+    public function superadminaddIdCards()
+    {
+    	return view('pages.superadmin.addIdCards');
+    }
+
     public function superadminsensors()
     {
     	return view('pages.superadmin.sensors');
+    }
+
+    public function superadminaddSensors()
+    {
+    	return view('pages.superadmin.addSensors');
     }
 
     public function superadminusers()
