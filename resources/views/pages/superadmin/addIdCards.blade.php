@@ -7,7 +7,7 @@
 <div class="col-md-10">
     <div class="box box-info">
         <div class="box-header with-border">
-            <h3 class="box-title">Add Sensors</h3>
+            <h3 class="box-title">Add Id Card</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->

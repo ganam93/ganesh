@@ -13,9 +13,7 @@ class HomeController extends Controller
 
    
     public function index()
-    {
-        return view('dashboard');
-        
-        return view('pages.superadmin.addCompany');
+    {    
+        return view('pages.superadmin.dashboard');
     }
 }

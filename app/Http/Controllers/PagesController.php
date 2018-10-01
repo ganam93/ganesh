@@ -53,6 +53,11 @@ class PagesController extends Controller
     	return view('pages.superadmin.addSensors');
     }
 
+    public function superadminaddBranch()
+    {
+    	return view('pages.superadmin.addBranch');
+    }
+
     public function superadminusers()
     {
         if(Auth::user()->hasRole('superadministrator')){

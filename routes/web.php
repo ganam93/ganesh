@@ -38,3 +38,4 @@ Route::get('/superadmin/users', 'PagesController@superadminusers');
 Route::get('/superadmin/visitors', 'PagesController@superadminvisitors');
 Route::get('/superadmin/addSensors', 'PagesController@superadminaddSensors');
 Route::get('/superadmin/addIdCards', 'PagesController@superadminaddIdCards');
+Route::get('/superadmin/addBranch', 'PagesController@superadminaddBranch');
