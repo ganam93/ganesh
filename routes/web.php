@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'PagesController@dashboard');
 
 Route::prefix('/')->middleware('role:superadministrator|administrator')
 	->group(function (){

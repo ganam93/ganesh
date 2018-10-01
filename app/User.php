@@ -12,21 +12,18 @@ class User extends Authenticatable
     use Notifiable;
     use LaratrustUserTrait;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'username', 'password',
+        'username','company_id','branch_id','password',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function phone()
+    {
+        return $this->hasOne('App\Role');
+    }
+
+    
 }

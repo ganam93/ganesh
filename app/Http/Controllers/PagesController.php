@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
+use App\Http\Resources\UserResource;
 
 class PagesController extends Controller
 {
@@ -15,6 +17,15 @@ class PagesController extends Controller
 
     public function dashboard()
     {
+        if(Auth::user()->hasRole('superadministrator')){
+            return view('pages.superadmin.dashboard');
+        }
+        else if(Auth::user()->hasRole('administrator')) {
+            return view('pages.admin.dashboard');
+        }
+        else{
+            return view('pages.admin.dashboard');
+        }
     	
     }
 
@@ -41,7 +52,9 @@ class PagesController extends Controller
     public function users()
     {
         if(Auth::user()->hasRole('superadministrator')){
-            return view('pages.users');
+
+            $users = UserResource::collection(User::all());
+            return view('pages.users')->with('users', $users);
         }
         else{
             return view('addCompany');

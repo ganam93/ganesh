@@ -63,7 +63,7 @@
                             </a>
                         </li>
                         <li>
-                            <a `` href="{{ route('logout') }}"
+                            <a href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         <span class="glyphicon glyphicon-log-out" ></span> {{ __('Logout') }}
@@ -142,13 +142,7 @@
             <!-- /.content -->
         </section>
     <!-- ./wrapper -->
-    <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Copyright &copy; 2018-2019 <a href="#"> Secure Lobby </a>. </strong> All rights
-    reserved.
-  </footer>
+    
         </div>
     </div>
 
