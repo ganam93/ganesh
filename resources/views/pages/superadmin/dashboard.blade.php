@@ -30,7 +30,7 @@
           <!-- small box -->
           <a href="{{url('/superadmin/companies')}}"><div class="small-box bg-aqua">
             <div class="inner">
-              <h3>53</h3>
+              <h3>{{$companies->count()}}</h3>
               <p>Companies</p>
             </div>
             <div class="icon">
@@ -44,7 +44,7 @@
           <!-- small box -->
           <a href="{{url('/superadmin/visitors')}}"><div class="small-box bg-green">
             <div class="inner">
-              <h3>150</h3>
+              <h3>{{$visitors->count()}}</h3>
 
               <p>Visitors</p>
             </div>
@@ -59,7 +59,7 @@
           <!-- small box -->
           <a href="{{url('/superadmin/idCards')}}"><div class="small-box bg-yellow">
             <div class="inner">
-              <h3>44</h3>
+              <h3>{{$idcards->count()}}</h3>
 
               <p>ID Cards</p>
             </div>
@@ -90,7 +90,7 @@
           <a href="{{url('/superadmin/sensors')}}"><div class="small-box bg-red">
             <div class="inner">
               <h3>65</h3>
-              <p>Sensors</p>
+              <p>{{$sensors->count()}}</p>
             </div>
             <div class="icon">
               <i class="ion ion-android-wifi"></i>

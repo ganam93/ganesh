@@ -24,12 +24,13 @@ Route::prefix('/')->middleware('role:superadministrator|administrator')
 
 	});
 
-
+Route::resource('/company', 'SubPages\CompaniesController');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/superadmin/companies', 'PagesController@superadmincompanies');
+Route::get('/superadmin/companies', 'SubPages\CompaniesController@index');
+Route::get('/superadmin/companies/{id}', 'PagesController@superadmincompanyDetails');
 Route::get('/superadmin/addCompany', 'PagesController@superadminaddCompany');
 Route::get('/superadmin/dashboard', 'PagesController@superadmindashboard');
 Route::get('/superadmin/idCards', 'PagesController@superadminidCards');

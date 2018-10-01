@@ -3,95 +3,60 @@
     Add Company Details
 @endsection
 @section('content')
+<div class="col-md-12">
     <!-- Horizontal Form -->
-    <div class="box box-info" style="margin:16px">
+    <div class="box box-info">
         <div class="box-header with-border">
-          <h3 class="box-title">Add Company</h3>
+            <h3 class="box-title">Add Company</h3>
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        <form class="form-horizontal" style="margin:18px">
+        <form class="form-horizontal" style="margin:18px" method="POST" action="/company">
             <div class="box-body">
-
+                {!! Form::open(['action' => 'SubPages\CompaniesController@store', 'method' => 'POST', 'enctype'=>'multipart/form-data']) !!}
                 <div class="form-group">
-                    <label for="companyname" class="col-sm-2 control-label">Company Name</label>
-                    
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="companyname" placeholder="Enter name of the company">
-                    </div>
+                    {{form::label('cname','Company Name')}}
+                    {{form::text('cname', '', ['class'=>'form-control', 'placeholder'=>'Enter company name'])}}  
                 </div>
-
                 <div class="form-group">
-                    <label for="pan" class="col-sm-2 control-label">Pan</label>
-                    
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="pan" placeholder="Enter Pan">
-                    </div>
+                    {{form::label('pan','Pan')}}
+                    {{form::text('pan', '', ['class'=>'form-control', 'placeholder'=>'Enter pan'])}}  
                 </div>
-
                 <div class="form-group">
-                <label for="gst" class="col-sm-2 control-label">GST Number</label>
-
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="gst" placeholder="Enter GST">
+                    {{form::label('GST','GST Number')}}
+                    {{form::text('GST', '', ['class'=>'form-control', 'placeholder'=>'Enter GST'])}}  
                 </div>
-                </div>
-
                 <div class="form-group">
-                <label for="comapnyaddr" class="col-sm-2 control-label">Company Address</label>
-
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="comapnyaddr" placeholder="Enter address">
+                    {{form::label('comapnyaddr','Company Address')}}
+                    {{form::text('comapnyaddr', '', ['class'=>'form-control', 'placeholder'=>'Enter company address'])}}  
                 </div>
-                </div>
-
                 <div class="form-group">
-                    <label for="state" class="col-sm-2 control-label">State</label>
-        
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="state" placeholder="Enter state">
-                    </div>
+                    {{form::label('city','City')}}
+                    {{form::text('city', '', ['class'=>'form-control', 'placeholder'=>'Enter city'])}}  
                 </div>
-
                 <div class="form-group">
-                    <label for="country" class="col-sm-2 control-label">Country</label>
-        
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="country" placeholder="Enter country">
-                    </div>
+                    {{form::label('country','Country')}}
+                    {{form::text('country', '', ['class'=>'form-control', 'placeholder'=>'Enter country'])}}  
                 </div>
-
                 <div class="form-group">
-                    <label for="zipcode" class="col-sm-2 control-label">Zip COde</label>
-        
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="zipcode" placeholder="Enter zip code">
-                    </div>
+                    {{form::label('zipcode','Zip Code')}}
+                    {{form::text('zipcode', '', ['class'=>'form-control', 'placeholder'=>'Enter zip code'])}}  
                 </div>
-
                 <div class="form-group">
-                    <label for="registration" class="col-sm-2 control-label">Registration Number</label>
-        
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="registration" placeholder="Enter registration number">
-                    </div>
+                    {{form::label('registration','Registration Number')}}
+                    {{form::text('registration', '', ['class'=>'form-control', 'placeholder'=>'Enter registration number'])}}  
                 </div>
-
                 <div class="form-group">
-                    <label for="website" class="col-sm-2 control-label">Website</label>
-        
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="website" placeholder="Enter website">
-                    </div>
+                    {{form::label('website','Website')}}
+                    {{form::text('website', '', ['class'=>'form-control', 'placeholder'=>'Enter website'])}}  
                 </div>
-
+                <hr>
+                <br>
+                {{form::submit('Submit', ['class'=>'btn btn-primary float-left'])}}
+                <button type=" button" class="btn btn-primary float-right" data-dismiss="modal">Cancel</button>
+                {!! Form::close() !!}
             </div>
-          <!-- /.box-body -->
-          <div class="box-footer">
-            <button type="submit" class="btn btn-default">Cancel</button>
-            <button type="submit" class="btn btn-info pull-right">Register</button>
-          </div>
-          <!-- /.box-footer -->
         </form>
     </div>
+</div>
 @endsection

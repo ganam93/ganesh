@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\API_Models\Company;
+use App\API_Models\Contact;
+use App\API_Models\IdCard;
+use App\API_Models\Sensor;
+use App\API_Models\Visitor;
+
 
 class PagesController extends Controller
 {
@@ -15,7 +21,11 @@ class PagesController extends Controller
 
     public function superadmindashboard()
     {
-    	return view('pages.superadmin.dashboard');
+        $companies = new Company;
+        $idcards = new IdCard;
+        $sensors = new Sensor;
+        $visitors = new Visitor;
+    	return view('pages.superadmin.dashboard', compact('companies', 'idcards', 'sensors', 'visitors'));
     }
 
     public function superadmincompanies()
@@ -57,6 +67,12 @@ class PagesController extends Controller
     {
     	return view('pages.superadmin.addBranch');
     }
+
+    public function superadmincompanyDetails($id)
+    {
+        $company = Company::find($id);
+    	return view('pages.superadmin.companyDetails', compact('id', 'company'));
+    }   
 
     public function superadminusers()
     {
