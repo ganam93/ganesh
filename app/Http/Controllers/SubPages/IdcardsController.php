@@ -10,6 +10,7 @@ class IdcardsController extends Controller
     // ------------ PART 1 ---------------- //
     //Routing subpages from idcards 
 
+    //NOTE : Check web.php -> companies section for better understanding
 
 
 
@@ -27,7 +28,6 @@ class IdcardsController extends Controller
 
 
 
-    
     // ------------ PART 2 ---------------- //
     //To control resources i.e. CRUD Operations
 

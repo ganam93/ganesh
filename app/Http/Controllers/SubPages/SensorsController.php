@@ -10,7 +10,7 @@ class SensorsController extends Controller
     // ------------ PART 1 ---------------- //
     //Routing subpages from Sensors 
 
-
+    //NOTE : Check web.php -> companies section for better understanding
 
 
 

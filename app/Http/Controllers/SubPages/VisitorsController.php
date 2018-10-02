@@ -11,7 +11,7 @@ class VisitorsController extends Controller
     // ------------ PART 1 ---------------- //
     //Routing subpages from Visitors 
 
-
+    //NOTE : Check web.php -> companies section for better understanding
 
 
 

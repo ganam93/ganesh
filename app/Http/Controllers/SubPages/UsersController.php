@@ -11,7 +11,7 @@ class UsersController extends Controller
     // ------------ PART 1 ---------------- //
     //Routing subpages from Users 
 
-
+    //NOTE : Check web.php -> companies section for better understanding
 
 
 
