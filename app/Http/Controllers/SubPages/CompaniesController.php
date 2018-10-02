@@ -4,80 +4,91 @@ namespace App\Http\Controllers\SubPages;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\API_Models\Company;
 
 class CompaniesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    // ------------ PART 1 ---------------- //
+    //Routing subpages from companies 
+
+    public function add()
     {
-        //
+    	return view('pages.superadmin.addCompany');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function show($id)
+    {
+        $company = Company::find($id);
+    	return view('pages.superadmin.companyDetails', compact('id', 'company'));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // ------------ PART 2 ---------------- //
+    //To control resources i.e. CRUD Operations
+    public function index()
+    {
+        
+    }
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        //$input = Input::all();
+        $company = new Company;
+        $company->cname = $request->input('cname');
+        $company->pan = $request->input('pan');
+        $company->GST = $request->input('GST');
+        $company->reg_no = $request->input('registration');
+        $company->website = $request->input('website');
+        $company->addr_line1 = $request->input('comapnyaddr');
+        $company->addr_line2 = $request->input('addr_line2');
+        $company->city = $request->input('city');
+        $company->country = $request->input('country');
+        $company->zipcode = $request->input('zipcode');
+
+        if($company->save()){
+          return redirect('/companies');
+        }
+
+        return response()->json(['error' => 'Something went wrong'], 500);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //
