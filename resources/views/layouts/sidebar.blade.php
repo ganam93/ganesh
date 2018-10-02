@@ -128,12 +128,15 @@
                                 <a href="{{url('/')}}">
                                     <i class="fa fa-home"></i> <span style="margin-top:4px">Dashboard</span>
                                 </a>
-                            </li>
+                    </li>
+
+                    @if(Auth::user()->hasRole('superadministrator'))
                     <li>
                     <a href="{{url('/companies')}}">
                         <i class="fa fa-building"></i> <span style="margin:4px">Companies</span>
                     </a>
                     </li>
+                    @endif
 
                     <li>
                     <a href="{{url('/visitors')}}">
@@ -153,11 +156,13 @@
                     </a>
                     </li>
 
+                    @if(Auth::user()->hasRole('superadministrator|administrator'))
                     <li>
                     <a href="{{url('/users')}}">
                         <i class="fa fa-user"></i> <span style="margin:4px">Users</span>
                     </a>
                     </li>
+                    @endif
                     
                 </ul>
             </section>

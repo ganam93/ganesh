@@ -45,8 +45,9 @@ Route::prefix('/')->middleware('role:superadministrator')
 
 
 
-
+/*
 Route::get('/superadmin/addCompany', 'PagesController@superadminaddCompany');
 Route::get('/superadmin/addSensors', 'PagesController@superadminaddSensors');
 Route::get('/superadmin/addIdCards', 'PagesController@superadminaddIdCards');
 Route::get('/superadmin/addBranch', 'PagesController@superadminaddBranch');
+*/
