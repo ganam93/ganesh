@@ -17,7 +17,7 @@ class VisitorResource extends JsonResource
             'check_in'=> $this->check_in,
             'check_out'=> $this->check_out,
             'company_id' => $this->company_id,
-            'Branch_id' => $this->Branch_id
+            'branch_id' => $this->branch_id
         ];
     }
 }

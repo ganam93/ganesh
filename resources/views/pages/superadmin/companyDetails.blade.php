@@ -33,8 +33,8 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-              <h3>53</h3>
-              <p>ID Cards</p>
+              <h3>{{$idcards->count()}}</h3>
+              <h4>ID Cards</h4>
             </div>
             
             <div class="icon">
@@ -46,8 +46,8 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-              <h3>53</h3>
-              <p>ID Cards</p>
+              <h3>{{$sensors->count()}}</h3>
+              <h4>Sensors</h4>
             </div>
             
             <div class="icon">
@@ -64,6 +64,7 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title"><b>Sensor Details</b></h3>
+                  <button class="btn btn-primary pull-right">Add Sensor</button>
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
@@ -189,6 +190,7 @@
               <div class="box">
                 <div class="box-header">
                   <h3 class="box-title"><b>ID card Details</b></h3>
+                  <button class="btn btn-primary pull-right">Add Id Card</button> 
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">

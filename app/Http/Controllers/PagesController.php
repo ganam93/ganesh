@@ -53,8 +53,10 @@ class PagesController extends Controller
         {
             if(Auth::user()->hasRole('superadministrator')){
 
+                $visitors = Visitor::all();
+                $temp = Visitor::with(['company', 'branch'])->get(); 
                 //write visitor related code here (for superadmin)
-                return view('pages.superadmin.visitors');
+                return view('pages.superadmin.visitors', compact('visitors', 'temp'));
             }
             else if(Auth::user()->hasRole('administrator')) {
                 //write visitor related code here (for admin)
@@ -77,12 +79,12 @@ class PagesController extends Controller
         {
             
             if(Auth::user()->hasRole('superadministrator')){
-
                 //write idcards related code here (for superadmin)
 
+                $idcards = IdCard::all();
+                $temp = IdCard::with(['company', 'branch'])->get(); 
 
-
-                return view('pages.superadmin.idcards');
+                return view('pages.superadmin.idcards', compact('idcards'));
             }
             else if(Auth::user()->hasRole('administrator')) {
                 //write idcards related code here (for admin)
@@ -107,9 +109,10 @@ class PagesController extends Controller
 
                 //write sensors related code here (for superadmin)
 
+                $sensors = Sensor::all();
+                $temp = Sensor::with(['company', 'branch'])->get(); 
 
-
-                return view('pages.superadmin.sensors');
+                return view('pages.superadmin.sensors', compact('sensors'));
             }
             else if(Auth::user()->hasRole('administrator')) {
                 //write sensors related code here (for admin)
@@ -146,8 +149,9 @@ class PagesController extends Controller
         // 6. Sensors (Sidebar -> Users)
         public function users()
         {
-                $users = UserResource::collection(User::all());
-                return view('pages.users')->with('users', $users);
+                $users = User::all();
+
+                return view('pages.superadmin.users')->with('users', $users);
         }
 
     /* ---------------------------------------------------------- */

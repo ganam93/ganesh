@@ -9,20 +9,15 @@
                 <div class="col-sm-6"></div>
                 <div class="col-sm-6"></div>
             </div>
-            @foreach($users->data as $user)
-                        {{$user}}
-                        @endforeach
-            <!-- @if(count($users) > 1)
+            @if(count($users) > 1)
             <div class="row">
                 <div class="col-sm-12">
                     <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                         <thead>
                             <tr role="row">
-                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Rendering engine: activate to sort column ascending">Rendering engine</th>
-                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Browser</th>
-                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Platform(s)</th>
-                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Engine version</th>
-                                <th class="sorting_desc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" aria-sort="descending">CSS grade</th>
+                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="ID: activate to sort column ascending">ID</th>
+                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Username: activate to sort column ascending">Username</th>
+                                <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Role: activate to sort column ascending">Role</th> 
                             </tr>
                         </thead>
                         @foreach($users as $user)
@@ -30,16 +25,15 @@
                             <tr role="row" class="odd">
                                 <td class="">{{$user->id}}</td>
                                 <td>{{$user->username}}</td>
-                                <td>{{$user->role}}</td>
-                                <td>-</td>
-                                <td class="sorting_1">X</td>
+                                <td>{{$user->role}}</td> <!-- The role of the user is in different table. We'll have to join those table OR
+                                will have to add a column in User table -->
                             </tr>
                         </tbody>
                         @endforeach
                     </table>
                 </div>
             </div>
-            @endif -->
+            @endif 
 
         </div>
     </div>

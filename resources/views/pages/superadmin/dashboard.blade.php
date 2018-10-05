@@ -28,10 +28,10 @@
       <div class="row">
         <div class="col-lg-2 col-md-4 col-xs-6">
           <!-- small box -->
-          <a href="{{url('/superadmin/companies')}}"><div class="small-box bg-aqua">
+          <a href="{{url('/companies')}}"><div class="small-box bg-aqua">
             <div class="inner">
               <h3>{{$companies->count()}}</h3>
-              <p>Companies</p>
+              <h4>Companies</h4>
             </div>
             <div class="icon">
               <i class="ion ion-stats-bars"></i>
@@ -46,7 +46,7 @@
             <div class="inner">
               <h3>{{$visitors->count()}}</h3>
 
-              <p>Visitors</p>
+              <h4>Visitors</h4>
             </div>
             <div class="icon">
               <i class="ion ion-android-walk"></i>
@@ -61,7 +61,7 @@
             <div class="inner">
               <h3>{{$idcards->count()}}</h3>
 
-              <p>ID Cards</p>
+              <h4>ID Cards</h4>
             </div>
             <div class="icon">
               <i class="ion ion-card"></i>
@@ -75,8 +75,7 @@
           <div class="small-box bg-yellow">
             <div class="inner">
               <h3>40</h3>
-
-              <p>Active ID Cards</p>
+              <h4>Active IdCards</h4>
             </div>
             <div class="icon">
               <i class="ion ion-card"></i>
@@ -89,8 +88,8 @@
           <!-- small box -->
           <a href="{{url('/superadmin/sensors')}}"><div class="small-box bg-red">
             <div class="inner">
-              <h3>65</h3>
-              <p>{{$sensors->count()}}</p>
+              <h3>{{$sensors->count()}}</h3>
+              <h4>Sensors</h4>
             </div>
             <div class="icon">
               <i class="ion ion-android-wifi"></i>
@@ -103,7 +102,7 @@
           <div class="small-box bg-red">
             <div class="inner">
               <h3>60</h3>
-              <p>Active Sensors</p>
+              <h4>Active Sensors</h4>
             </div>
             <div class="icon">
               <i class="ion ion-android-wifi"></i>

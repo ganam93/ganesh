@@ -5,6 +5,8 @@ namespace App\Http\Controllers\SubPages;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\API_Models\Company;
+use App\API_Models\IdCard;
+use App\API_Models\Sensor;
 
 class CompaniesController extends Controller
 {
@@ -20,7 +22,10 @@ class CompaniesController extends Controller
     public function show($id)
     {
         $company = Company::find($id);
-    	return view('pages.superadmin.companyDetails', compact('id', 'company'));
+        $idcards = IdCard::where('company_id', $id);
+        $sensors = Sensor::where('company_id', $id);
+
+    	return view('pages.superadmin.companyDetails', compact('idcards', 'company', 'sensors', 'id'));
     }
 
 
@@ -57,7 +62,14 @@ class CompaniesController extends Controller
 
     public function store(Request $request)
     {
-        //$input = Input::all();
+        $request->validate([
+            'cname' => 'bail|required|unique:companies|max:255',
+            'pan' => 'required|unique:companies|max:10',
+            'GST' => 'required|unique:companies',
+            'registration' => 'required|unique:companies|max:21',
+            'comapnyaddr' => 'required|unique:companies',
+        ]);
+
         $company = new Company;
         $company->cname = $request->input('cname');
         $company->pan = $request->input('pan');

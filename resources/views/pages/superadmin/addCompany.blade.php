@@ -9,6 +9,15 @@
         <div class="box-header with-border">
             <h3 class="box-title">Add Company</h3>
         </div>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <!-- /.box-header -->
         <!-- form start -->
         <form class="form-horizontal" style="margin:18px" method="POST" action="/companies/add"> <!-- changed to companies/add form /company -->
@@ -23,7 +32,7 @@
                     {{form::text('pan', '', ['class'=>'form-control', 'placeholder'=>'Enter pan'])}}  
                 </div>
                 <div class="form-group">
-                    {{form::label('GST','GST Number')}}
+                    {{form::label('GST','GST')}}
                     {{form::text('GST', '', ['class'=>'form-control', 'placeholder'=>'Enter GST'])}}  
                 </div>
                 <div class="form-group">
@@ -44,7 +53,7 @@
                 </div>
                 <div class="form-group">
                     {{form::label('registration','Registration Number')}}
-                    {{form::text('registration', '', ['class'=>'form-control', 'placeholder'=>'Enter registration number'])}}  
+                    {{form::text('registration', '', ['class'=>'form-control', 'placeholder'=>'Enter registration/CIN number'])}}  
                 </div>
                 <div class="form-group">
                     {{form::label('website','Website')}}
@@ -53,7 +62,7 @@
                 <hr>
                 <br>
                 {{form::submit('Submit', ['class'=>'btn btn-primary float-left'])}}
-                <button type=" button" class="btn btn-primary float-right" data-dismiss="modal">Cancel</button>
+                <button type=" button" class="btn btn-primary pull-right" data-dismiss="modal">Cancel</button>
                 {!! Form::close() !!}
             </div>
         </form>

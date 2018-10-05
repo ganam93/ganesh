@@ -10,6 +10,6 @@ $factory->define(Visitor::class, function (Faker $faker) {
         'check_in'=> $faker->randomDigit(20),
         'check_out'=> $faker->randomDigit(20),
         'company_id'=> $faker->randomDigit(20),
-        'Branch_id'=> $faker->randomDigit(20)
+        'branch_id'=> $faker->randomDigit(20)
     ];
 });
