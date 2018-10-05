@@ -223,14 +223,13 @@
 
     <script>
       $(function () {
-        $('#example1, #example2').DataTable()
         $('#example1, #example2').DataTable({
-          'paging'      : true,
-          'lengthChange': false,
-          'searching'   : false,
+          'paging'      : false,
+          'lengthChange': true,
+          'searching'   : true,
           'ordering'    : true,
-          'info'        : true,
-          'autoWidth'   : false
+          'info'        : false,
+          'autoWidth'   : true
         })
       })
 

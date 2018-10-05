@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\DB;
 
 class UserResource extends JsonResource
 {
@@ -14,12 +15,13 @@ class UserResource extends JsonResource
      */
     public function toArray($request)
     {
+        $role = $this->roles;
         return[
             'id' => $this->id,
             'username'=> $this->username,
             'company_id'=> $this->company_id,
             'branch_id'=> $this->branch_id,
-            'role'=> $this->role,
+            'role' => $role[0]
         ];
     }
 }

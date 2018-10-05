@@ -12,7 +12,9 @@ class UsersController extends Controller
     //Routing subpages from Users 
 
     //NOTE : Check web.php -> companies section for better understanding
-
+    public function add(){
+        return view('pages.superadmin.users.create');
+    }
 
 
 

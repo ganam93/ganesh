@@ -20,6 +20,7 @@ Route::prefix('/')->middleware('role:superadministrator')
 */
 	->group(function (){
 		Route::get('/users', 'PagesController@users');	//Sidebar -> Pages	
+		Route::get('/users/add', 'SubPages\UsersController@add');	//Sidebar -> Pages
 
 		/* Pages with '/companies' prefix
 		   e.g. 'securelobby.me/companies/add'
