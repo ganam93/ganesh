@@ -32,10 +32,10 @@ class PagesController extends Controller
         // 1. Dashboard (Sidebar -> Dashboard)
         public function dashboard(){
             if(Auth::user()->hasRole('superadministrator')){
-                $companies = new Company();
-                $idcards = new IdCard();
-                $sensors = new Sensor();
-                $visitors = new Visitor();
+                $companies = Company::all();
+                $idcards = IdCard::all();
+                $sensors = Sensor::all();
+                $visitors = Visitor::all();
                 return view('pages.superadmin.dashboard', compact('companies', 'idcards', 'sensors', 'visitors'));
             }
             else if(Auth::user()->hasRole('administrator')) {
@@ -52,11 +52,10 @@ class PagesController extends Controller
         public function visitors()
         {
             if(Auth::user()->hasRole('superadministrator')){
+                //write visitor related code here (for superadmin)
 
                 $visitors = Visitor::all();
-                $temp = Visitor::with(['company', 'branch'])->get(); 
-                //write visitor related code here (for superadmin)
-                return view('pages.superadmin.visitors', compact('visitors', 'temp'));
+                return view('pages.superadmin.visitors', compact('visitors'));
             }
             else if(Auth::user()->hasRole('administrator')) {
                 //write visitor related code here (for admin)
@@ -82,8 +81,6 @@ class PagesController extends Controller
                 //write idcards related code here (for superadmin)
 
                 $idcards = IdCard::all();
-                $temp = IdCard::with(['company', 'branch'])->get(); 
-
                 return view('pages.superadmin.idcards', compact('idcards'));
             }
             else if(Auth::user()->hasRole('administrator')) {
@@ -110,8 +107,6 @@ class PagesController extends Controller
                 //write sensors related code here (for superadmin)
 
                 $sensors = Sensor::all();
-                $temp = Sensor::with(['company', 'branch'])->get(); 
-
                 return view('pages.superadmin.sensors', compact('sensors'));
             }
             else if(Auth::user()->hasRole('administrator')) {

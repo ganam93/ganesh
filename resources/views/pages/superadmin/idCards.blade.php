@@ -7,10 +7,6 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-header">
-                    <h3 class="box-title">Hover Data Table</h3>
-                </div>
-                <!-- /.box-header -->
                 <div class="box-body">
                     <table id="example2" class="table table-bordered table-hover">
                         <thead>
@@ -33,9 +29,12 @@
                                 <td>{{$idcard->issued_date}}</td>
                                 <td>{{$idcard->expiry_date}}</td>
                                 <!-- Work on a logic to display company and branch -->
+                                <td>{{$idcard->company->cname}}</td>
+                                @if($idcard->branch_id)
+                                <td>{{$idcard->branch->city}}</td>
+                                @else
                                 <td>-</td>
-                                <td>-</td>
-                                
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>

@@ -7,10 +7,6 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <div class="box-header">
-                    <h3 class="box-title">Hover Data Table</h3>
-                </div>
-                <!-- /.box-header -->
                 <div class="box-body">
                     <table id="example2" class="table table-bordered table-hover">
                         <thead>
@@ -30,9 +26,12 @@
                                 <td>{{$sensor->manufacturer}}</td>
                                 <td>{{$sensor->model}}</td>
                                 <td>{{$sensor->location}}</td>
-                                <!-- Work on a logic to display company and branch -->
+                                <td>{{$sensor->company->cname}}</td>
+                                @if($sensor->branch_id)
+                                <td>{{$sensor->branch->city}}</td>
+                                @else
                                 <td>-</td>
-                                <td>-</td>
+                                @endif
                                 
                             </tr>
                             @endforeach

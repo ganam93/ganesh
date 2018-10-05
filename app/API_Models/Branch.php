@@ -4,6 +4,10 @@ namespace App\API_Models;
 
 use Illuminate\Database\Eloquent\Model;
 use App\API_Models\Contact;
+use App\API_Models\Company;
+use App\API_Models\Sensor;
+use App\API_Models\Visitor;
+use App\API_Models\Idcard;
 
 class Branch extends Model
 {

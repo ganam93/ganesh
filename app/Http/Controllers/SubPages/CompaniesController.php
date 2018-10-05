@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\API_Models\Company;
 use App\API_Models\IdCard;
 use App\API_Models\Sensor;
+use App\API_Models\Branch;
 
 class CompaniesController extends Controller
 {
@@ -22,26 +23,11 @@ class CompaniesController extends Controller
     public function show($id)
     {
         $company = Company::find($id);
-        $idcards = IdCard::where('company_id', $id);
-        $sensors = Sensor::where('company_id', $id);
-
-    	return view('pages.superadmin.companyDetails', compact('idcards', 'company', 'sensors', 'id'));
+        $branches = Branch::where('company_id', $id)->get();
+        $idcards = IdCard::where('company_id', $id)->get();
+        $sensors = Sensor::where('company_id', $id)->get(); 
+    	return view('pages.superadmin.companyDetails', compact('idcards', 'company', 'sensors', 'id', 'branches'));
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
