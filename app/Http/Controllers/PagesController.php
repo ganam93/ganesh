@@ -39,7 +39,10 @@ class PagesController extends Controller
                 return view('pages.superadmin.dashboard', compact('companies', 'idcards', 'sensors', 'visitors'));
             }
             else if(Auth::user()->hasRole('administrator')) {
-                return view('pages.admin.dashboard');
+                $idcards = IdCard::where('company_id',Auth::user()->company_id)->get();
+                $sensors = Sensor::where('company_id',Auth::user()->company_id)->get();
+                $visitors = Visitor::where('company_id',Auth::user()->company_id)->get();
+                return view('pages.admin.dashboard', compact('idcards', 'sensors', 'visitors'));
             }
             else{
                 return view('pages.user.dashboard');
@@ -58,7 +61,8 @@ class PagesController extends Controller
                 return view('pages.superadmin.visitors', compact('visitors'));
             }
             else if(Auth::user()->hasRole('administrator')) {
-                //write visitor related code here (for admin)
+                $visitors = Visitor::where('company_id',Auth::user()->company_id)->get();
+                return view('pages.admin.visitors', compact('visitors'));
 
 
             }
@@ -85,6 +89,8 @@ class PagesController extends Controller
             }
             else if(Auth::user()->hasRole('administrator')) {
                 //write idcards related code here (for admin)
+                $idcards = IdCard::where('company_id',Auth::user()->company_id)->get();
+                return view('pages.admin.idcards', compact('idcards'));
 
 
             }
@@ -111,7 +117,9 @@ class PagesController extends Controller
             }
             else if(Auth::user()->hasRole('administrator')) {
                 //write sensors related code here (for admin)
-
+                $sensors = Sensor::where('company_id',Auth::user()->company_id)->get();
+                return view('pages.admin.sensors', compact('sensors'));
+                
 
             }
             else{
@@ -127,6 +135,31 @@ class PagesController extends Controller
     /* ---------------------------------------------------------- */
 
 
+    /*------- Pages which is shown to the superadmin/admin only --------*/
+
+        // 5. users (Sidebar -> Users)
+        public function users()
+        {
+
+            if(Auth::user()->hasRole('superadministrator')){
+
+                //write sensors related code here (for superadmin)
+
+                $users = User::all();
+                return view('pages.superadmin.users.index')->with('users', $users);
+            }
+            else if(Auth::user()->hasRole('administrator')) {
+                //write sensors related code here (for admin)
+                $users = User::where('company_id',Auth::user()->company_id)->get();
+                return view('pages.superadmin.users.index')->with('users', $users);
+                
+
+            }   
+        }
+
+    /* ---------------------------------------------------------- */
+
+
 
 
 
@@ -134,19 +167,13 @@ class PagesController extends Controller
 
     /*------- Pages which is shown to the superadmin only --------*/
 
-        // 5. Companies (Sidebar -> Companies)
+        // 6. Companies (Sidebar -> Companies)
         public function companies()
         {
             $company = Company::all();
             return view('pages.superadmin.companies', compact('company'));
         }
         
-        // 6. Sensors (Sidebar -> Users)
-        public function users()
-        {
-                $users = User::all();
-                return view('pages.superadmin.users.index')->with('users', $users);
-        }
 
     /* ---------------------------------------------------------- */
 

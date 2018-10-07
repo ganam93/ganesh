@@ -14,7 +14,7 @@ Route::get('/sensors', 'PagesController@sensors');
 
 // Following pages will be shown to superadmin only
 
-Route::prefix('/')->middleware('role:superadministrator') 
+Route::prefix('/')->middleware('role:superadministrator|administrator') 
 /* If URL is "securelobby.me/" and role of logged in user is superadmin
    then following pages will be shown
 */
