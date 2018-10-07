@@ -49,7 +49,7 @@
     <link href="{{asset('css/custom.css')}}" rel="stylesheet" type="text/css">
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-main">
     <div class="wrapper">
         <header class="main-header">
 
@@ -170,11 +170,12 @@
             <!-- /.sidebar -->
         </aside>
 
-        <div class="content-wrapper" style="height:1000px">
 
-            <section class="content">
+        <div class="content-wrapper" style="height:100%">
+        <section class="content">
                 @yield('content')
             </section>
+
         </div>
     </div>
 
@@ -225,7 +226,7 @@
     <script>
       $(function () {
         $('#example1, #example2').DataTable({
-          'paging'      : false,
+          'paging'      : true,
           'lengthChange': true,
           'searching'   : true,
           'ordering'    : true,

@@ -9,11 +9,18 @@
 <div class="box box-info" style="margin:16px">
 
 
+    <div class="box-header">
+        
+    </div>
+
 
     <div class="box-body">
         <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
+        
             <div class="row">
-                <div class="col-sm-6"></div>
+            
+                <div class="col-sm-6">
+             </div>
                 <div class="col-sm-6"></div>
             </div>
     

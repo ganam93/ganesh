@@ -5,91 +5,81 @@
 <!-- Main content -->
 <section class="content">
   <!-- Small boxes (Stat box) -->
+  
   <div class="row">
-    <!-- ./col -->
-    <div class="col-lg-2 col-md-4 col-xs-6">
-      <!-- small box -->
-      <a href="{{url('/visitors')}}">
-        <div class="small-box bg-green">
-          <div class="inner">
-            <h3>{{$visitors->count()}}</h3>
-            <h4>Visitors</h4>
+  <div class="col-md-3">
+          <!-- Widget: user widget style 1 -->
+          <div class="box box-widget widget-user-2">
+            <div class="widget-user-header bg-blue" style="text-align : center; padding : 1px;">
+              <h3>Sensors</h3>
+            </div>
+            <div class="box-footer no-padding">
+              <ul class="nav nav-stacked">
+                <li><a href="#">Total <span class="pull-right badge bg-blue">31</span></a></li>
+                <li><a href="#">Active <span class="pull-right badge bg-green">5</span></a></li>
+                <li><a href="#">Inactive<span class="pull-right badge bg-red">12</span></a></li>
+              </ul>
+            </div>
           </div>
-          <div class="icon">
-            <i class="ion ion-android-walk"></i>
+          <!-- /.widget-user -->
+        </div>
+        <div class="col-md-3">
+          <!-- Widget: user widget style 1 -->
+          <div class="box box-widget widget-user-2">
+            <div class="widget-user-header bg-maroon" style="text-align : center; padding : 1px;">
+              <h3>ID CARDS</h3>
+            </div>
+            <div class="box-footer no-padding">
+              <ul class="nav nav-stacked">
+                <li><a href="#">Total <span class="pull-right badge bg-blue">31</span></a></li>
+                <li><a href="#">Active <span class="pull-right badge bg-aqua">5</span></a></li>
+                <li><a href="#">Inactive<span class="pull-right badge bg-green">12</span></a></li>
+              </ul>
+            </div>
           </div>
-          <!--  <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> -->
+          <!-- /.widget-user -->
         </div>
-      </a>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-2 col-md-4 col-xs-6">
-      <!-- small box -->
-      <a href="{{url('/idcards')}}"><div class="small-box bg-yellow">
-        <div class="inner">
-          <h3>{{$idcards->count()}}</h3>
-
-          <h4>ID Cards</h4>
+        <div class="col-md-3">
+          <!-- Widget: user widget style 1 -->
+          <div class="box box-widget widget-user-2">
+            <div class="widget-user-header bg-orange" style="text-align : center; padding : 1px;">
+              <h3>Sensors</h3>
+            </div>
+            <div class="box-footer no-padding">
+              <ul class="nav nav-stacked">
+                <li><a href="#">Total <span class="pull-right badge bg-blue">31</span></a></li>
+                <li><a href="#">Active <span class="pull-right badge bg-aqua">5</span></a></li>
+                <li><a href="#">Inactive<span class="pull-right badge bg-green">12</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /.widget-user -->
         </div>
-        <div class="icon">
-          <i class="ion ion-card"></i>
+        <div class="col-md-3">
+          <!-- Widget: user widget style 1 -->
+          <div class="box box-widget widget-user-2">
+            <div class="widget-user-header bg-yellow" style="text-align : center; padding : 1px;">
+              <h3>Sensors</h3>
+            </div>
+            <div class="box-footer no-padding">
+              <ul class="nav nav-stacked">
+                <li><a href="#">Total <span class="pull-right badge bg-blue">31</span></a></li>
+                <li><a href="#">Active <span class="pull-right badge bg-green">5</span></a></li>
+                <li><a href="#">Inactive<span class="pull-right badge bg-red">12</span></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /.widget-user -->
         </div>
-      <!--  <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> -->
-      </div></a>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-2 col-md-4 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-yellow">
-        <div class="inner">
-          <h3>40</h3>
-          <h4>Active IdCards</h4>
-        </div>
-        <div class="icon">
-          <i class="ion ion-card"></i>
-        </div>
-      <!--  <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> -->
-      </div>
-    </div>
-    <!-- ./col -->
-    <div class="col-lg-2 col-md-4 col-xs-6">
-      <!-- small box -->
-      <a href="{{url('/sensors')}}"><div class="small-box bg-red">
-        <div class="inner">
-          <h3>{{$sensors->count()}}</h3>
-          <h4>Sensors</h4>
-        </div>
-        <div class="icon">
-          <i class="ion ion-android-wifi"></i>
-        </div>
-      <!--  <a href="#" class="small-box-footer ">More info <i class="fa fa-arrow-circle-right"></i></a> -->
-      </div></a>
-    </div>
-  <div class="col-lg-2 col-md-4 col-xs-6">
-      <!-- small box -->
-      <div class="small-box bg-red">
-        <div class="inner">
-          <h3>60</h3>
-          <h4>Active Sensors</h4>
-        </div>
-        <div class="icon">
-          <i class="ion ion-android-wifi"></i>
-        </div>
-    <!--     <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a> -->
-      </div>
-      
-    <!-- ./col -->
     </div>
   <!-- /.row -->
-</section>
 
-    
-    <!-- Main content -->
-<section class="content">
+<div class="row">
   <div class="col-lg-6 col-xs-12">
-    <div class="box">
+    <div class="box box-widget widget-user-2" style="margin-left : 0px;">
       <div class="box-header">
         <h3 class="box-title"><b>Sensor Details</b></h3>
+        <button class="btn btn-primary pull-right">Add Sensor</button>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -97,6 +87,7 @@
           <thead>
           <tr>
             <th>Manufacturer</th>
+            <th>Company</th>
             <th>Branch</th>
             <th>Status</th>
           </tr>
@@ -105,6 +96,7 @@
             @foreach ($sensors as $sensor)
             <tr>
               <td>{{$sensor->manufacturer}}</td>
+              <td>{{$sensor->company->cname}}</td>
               @if($sensor->branch_id)
               <td>{{$sensor->branch->city}}</td>
               @else
@@ -122,9 +114,10 @@
     <!-- /.box -->
   </div>
   <div class="col-xs-6">
-    <div class="box">
+    <div class="box box-widget widget-user-2">
       <div class="box-header">
         <h3 class="box-title"><b>ID card Details</b></h3>
+        <button class="btn btn-primary pull-right">Add Id Card</button> 
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -132,6 +125,7 @@
           <thead>
           <tr>
             <th>Id</th>
+            <th>Compnay</th>
             <th>Branch</th>
             <th>Expiry Date</th>
           </tr>
@@ -140,6 +134,7 @@
             @foreach ($idcards as $idcard)
             <tr>
               <td>{{$idcard->id}}</td>
+              <td>{{$idcard->company->cname}}</td>
               @if($idcard->branch_id)
               <td>{{$idcard->branch->city}}</td>
               @else
@@ -156,5 +151,6 @@
     </div>
     <!-- /.box -->
   </div>
+</div>
 </section>
 @endsection
