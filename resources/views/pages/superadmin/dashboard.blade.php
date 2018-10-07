@@ -1,27 +1,7 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<style>
-  .content {
-    min-height: 0px;
-  }
-  .small-box{
-    border-radius: 5px;
-    position: relative;
-    display: block;
-    margin-bottom: 20px;
-    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
-  }
-  .content-wrapper, .main-footer{
-    margin-top: 0;
-  }
-  .small-box .icon {
-    top: 10px;
-  }
-  .small-box>.inner {
-    padding: 20px;
-}
-  </style>
+
 <!-- Main content -->
 <section class="content">
   <!-- Small boxes (Stat box) -->
