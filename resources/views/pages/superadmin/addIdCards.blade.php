@@ -1,6 +1,6 @@
 @extends('layouts.sidebar')
 @section('title')
-    Add Id Cards
+{{$company->cname}} ---- Add Id Card
 @endsection
 @section('content')
 <!-- Horizontal Form -->
@@ -10,58 +10,59 @@
             <h3 class="box-title">Add Id Card</h3>
         </div>
         <!-- /.box-header -->
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <!-- form start -->
-        <form class="form-horizontal" style="margin:18px">
-            <div class="box-body">
+        <div class="box-body">
 
-                <div class="form-group">
-                    <label for="idno" class="col-sm-2 control-label">Id card number</label>
-                    
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="idno" placeholder="Enter Id card number">
-                    </div>
-                </div>
+            {!! Form::open(['action'=> ['SubPages\IdCardsController@addIdcard', $id], 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
+            <div class="form-group">
+                {{form::label('major','Major')}}
+                {{form::text('major', '', ['class'=>'form-control', 'placeholder'=>'Enter Manufacturer'])}}  
+            </div>
 
-                <div class="form-group">
-                    <label for="mfg" class="col-sm-2 control-label">Manufacturer</label>
-                    
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="mfg" placeholder="Enter Manufacturer">
-                    </div>
-                </div>
+            <div class="form-group">
+                {{form::label('minor','Minor')}}
+                {{form::text('minor', '', ['class'=>'form-control', 'placeholder'=>'Enter model'])}}  
+            </div>
 
-                <div class="form-group">
-                <label for="mfgdate" class="col-sm-2 control-label">Manufactured Date</label>
+            <div class="form-group">
+                {{form::label('issued_date','Issued date')}}
+                {{form::date('issued_date', '', ['class'=>'form-control', 'placeholder'=>'Enter location'])}}  
+            </div>
 
-                <div class="col-sm-6">
-                    <input type="date" class="form-control" id="mfgdate" placeholder="Enter manufactured date">
-                </div>
-                </div>
+            <div class="form-group">
+                {{form::label('expiry_date','Expiry date')}}
+                {{form::date('expiry_date', '', ['class'=>'form-control', 'placeholder'=>'Enter location'])}}  
+            </div>
 
-                <div class="form-group">
-                <label for="branch" class="col-sm-2 control-label">Branch</label>
-
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="branch" placeholder="Enter branch">
-                </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="expiry" class="col-sm-2 control-label">Expiry</label>
-        
-                    <div class="col-sm-6">
-                        <input type="date" class="form-control" id="expiry" placeholder="Enter expiry date">
-                    </div>
-                </div>
-
+            <div class="form-group">
+                {{form::label('branch_id','Branch')}}
+                <select name="branch_id" class="form-control">
+                    @if (isset($branches))
+                        @foreach ($branches as $branch)
+                            <option value ="{{$branch->id}}">{{ $branch->city }} </option>
+                        @endforeach
+                    @endif
+                </select>  
+            </div>
+    
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-            <button type="submit" class="btn btn-default">Cancel</button>
-            <button type="submit" class="btn btn-info pull-right">Save</button>
+                {{form::submit('Submit', ['class'=>'btn btn-primary float-left'])}}
+                <a href="{{ url('/companies/'.$id)}}">
+                    <p class="btn btn-primary pull-right">Cancel</p>
+                </a>
+                {!! Form::close() !!}
             </div>
-            <!-- /.box-footer -->
-        </form>
     </div>
 </div>
 @endsection

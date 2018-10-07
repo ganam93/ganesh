@@ -125,7 +125,6 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title"><b>Sensor Details</b></h3>
-        <button class="btn btn-primary pull-right">Add Sensor</button>
       </div>
       <!-- /.box-header -->
       <div class="box-body">
@@ -163,7 +162,6 @@
     <div class="box">
       <div class="box-header">
         <h3 class="box-title"><b>ID card Details</b></h3>
-        <button class="btn btn-primary pull-right">Add Id Card</button> 
       </div>
       <!-- /.box-header -->
       <div class="box-body">

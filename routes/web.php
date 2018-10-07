@@ -33,10 +33,22 @@ Route::prefix('/')->middleware('role:superadministrator')
 					   page will redirect to "securelobby.me/comapnies/add"
 					*/
 					
-					Route::get('/add', 'SubPages\CompaniesController@add'); //route to add new company page
-					Route::post('/add', 'SubPages\CompaniesController@store'); //Post request to add company
+				Route::get('/add', 'SubPages\CompaniesController@add'); //route to add new company page
+				Route::post('/add', 'SubPages\CompaniesController@store'); //Post request to add company
 
-					Route::get('/{id}', 'SubPages\CompaniesController@show'); //"securelobby.me/companies/1"
+				Route::get('/edit/{id}', 'SubPages\CompaniesController@edit'); //route to add new branch page
+				Route::put('/edit/{id}', 'SubPages\CompaniesController@update'); //PUT request to add branch
+
+				Route::get('/{id}/addbranch', 'SubPages\BranchesController@addbranch'); //route to add new branch page
+				Route::post('/{id}/addbranch', 'SubPages\BranchesController@store'); //Post request to add branch
+
+				Route::get('/{id}/addSensor', 'SubPages\SensorsController@addSensor'); //route to add new branch page
+				Route::post('/{id}/addSensor', 'SubPages\SensorsController@store'); //Post request to add branch
+
+				Route::get('/{id}/addIdcard', 'SubPages\IdCardsController@addIdcard'); //route to add new branch page
+				Route::post('/{id}/addIdcard', 'SubPages\IdCardsController@store'); //Post request to add branch
+
+				Route::get('/{id}', 'SubPages\CompaniesController@show'); //"securelobby.me/companies/1"
 
 			});
 

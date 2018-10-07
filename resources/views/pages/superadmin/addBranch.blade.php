@@ -1,112 +1,63 @@
 @extends('layouts.sidebar')
 @section('title')
-    Add Branch
+    {{$company->cname}} ---- Add Branch
 @endsection
 @section('content')
 <!-- Horizontal Form -->
-<div class="col-md-10">
+<div class="col-md-12">
     <div class="box box-info">
         <div class="box-header with-border">
             <h3 class="box-title">Add Branch</h3>
-        </div>
-        <!-- /.box-header -->
+        </div><!-- /.box-header -->
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <!-- form start -->
-        <form class="form-horizontal" style="margin:18px">
-            <div class="box-body">
+        <div class="box-body">
+            {!! Form::open(['action'=> ['SubPages\BranchesController@addbranch', $id], 'method'=>'POST', 'enctype'=>'multipart/form-data']) !!}
+            <div class="form-group">
+                {{form::label('addr','Address')}}
+                {{form::text('addr_line1', '', ['class'=>'form-control', 'placeholder'=>'Address line 1'])}}  <br>
+                {{form::text('addr_line1', '', ['class'=>'form-control', 'placeholder'=>'Address line 2'])}}  
+            </div>
 
-                <div class="form-group">
-                    <label for="branchid" class="col-sm-2 control-label">Branch Id</label>
-                    
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="branchid" placeholder="Enter Branch id">
-                    </div>
-                </div>
+            <div class="form-group">
+                {{form::label('city','City')}}
+                {{form::text('city', '', ['class'=>'form-control', 'placeholder'=>'Enter city'])}}  
+            </div>
 
-                <div class="form-group">
-                    <label for="addr" class="col-sm-2 control-label">Address</label>
-                    
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="addr" placeholder="Enter Address">
-                    </div>
-                </div>
+            <div class="form-group">
+                {{form::label('state','State')}}
+                {{form::text('state', '', ['class'=>'form-control', 'placeholder'=>'Enter state'])}}  
+            </div>
 
-                <div class="form-group">
-                <label for="state" class="col-sm-2 control-label">State</label>
+            <div class="form-group">
+                {{form::label('country','Country')}}
+                {{form::text('country', '', ['class'=>'form-control', 'placeholder'=>'Enter country'])}}  
+            </div>
 
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="state" placeholder="Enter state">
-                </div>
-                </div>
-
-                <div class="form-group">
-                <label for="country" class="col-sm-2 control-label">Country</label>
-
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="country" placeholder="Enter country">
-                </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="zipcode" class="col-sm-2 control-label">Zip code</label>
-        
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="zipcode" placeholder="Enter zipcode">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="contact" class="col-sm-2 control-label">Contact</label>
-        
-                    <div class="col-sm-7">
-                        <div class="form-group">
-                            <label for="cname" class="col-sm-2 control-label">Name</label>
-                
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="cname" placeholder="Enter contact's name">
-                            </div>
-                        </div>
-        
-                        <div class="form-group">
-                            <label for="cdesignation" class="col-sm-2 control-label">Designation</label>
-                
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="cdesignation" placeholder="Enter designation of the contact person">
-                            </div>
-                        </div>
-        
-                        <div class="form-group">
-                            <label for="cmobile" class="col-sm-2 control-label">Mobile</label>
-                
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="cmobile" placeholder="Enter mobile number">
-                            </div>
-                        </div>
-        
-                        <div class="form-group">
-                            <label for="cdesignation" class="col-sm-2 control-label">Landline</label>
-                
-                            <div class="col-sm-8">
-                                <input type="text" class="form-control" id="cdesignation" placeholder="Enter landline number">
-                            </div>
-                        </div>
-        
-                        <div class="form-group">
-                            <label for="cemail" class="col-sm-2 control-label">Email</label>
-                
-                            <div class="col-sm-8">
-                                <input type="email" class="form-control" id="cemail" placeholder="Enter designation of the contact person">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="form-group">
+                {{form::label('zipcode','Zip Code')}}
+                {{form::text('zipcode', '', ['class'=>'form-control', 'placeholder'=>'Enter zipcode'])}}  
+            </div>
+    
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-            <button type="submit" class="btn btn-default">Cancel</button>
-            <button type="submit" class="btn btn-info pull-right">Save</button>
+                {{form::submit('Submit', ['class'=>'btn btn-primary float-left'])}}
+                <a href="{{ url('/companies/'.$id)}}">
+                    <p class="btn btn-primary pull-right">Cancel</p>
+                </a>
+                {!! Form::close() !!}
             </div>
             <!-- /.box-footer -->
-        </form>
+        
     </div>
 </div>
 @endsection

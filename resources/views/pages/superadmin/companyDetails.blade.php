@@ -11,11 +11,13 @@
           <ul class="nav nav-tabs">
             <li class="active"><a href="#activity" data-toggle="tab"><b>Company Details</b></a></li>
             <li><a href="#timeline" data-toggle="tab"><b>Branch Details</b></a></li>
-            <li class="btn btn-primary pull-right" style="margin-top:3px"> Add Branch</li>
+            <li class="pull-right"><a href="{{url('/companies/'.$id.'/addbranch')}}"><b class="btn btn-primary">Add Branch</b></a></li>
           </ul>
           
           <div class="tab-content">
             <div class="active tab-pane" id="activity">
+            <a href="{{url('companies/edit/'.$id)}}"><span class="glyphicon glyphicon-pencil pull-right" style="margin:8px"></span></a>
+
               <div class="well well-sm">
                   Address : {{$company->addr_line1}}  <br>
                   City : {{$company->city}}  <br>
@@ -30,7 +32,7 @@
                 <div class="well well-sm">
                     Address : {{$branch->addr_line1}}  <br>
                     City : {{$branch->city}}  <br>
-                    State : {{$branch->pan}}  <br>
+                    State : {{$branch->state}}  <br>
                     Country : {{$branch->country}}  <br>
                     Zipcode : {{$branch->zipcode}}  <br>
                 </div>    
@@ -75,7 +77,9 @@
       <div class="box">
         <div class="box-header">
           <h3 class="box-title"><b>Sensor Details</b></h3>
-          <button class="btn btn-primary pull-right">Add Sensor</button>
+          <a href="{{url('/companies/'.$id.'/addSensor')}}">
+            <button class="btn btn-primary pull-right">Add Sensor</button>
+          </a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -115,7 +119,9 @@
       <div class="box">
         <div class="box-header">
           <h3 class="box-title"><b>ID card Details</b></h3>
-          <button class="btn btn-primary pull-right">Add Id Card</button> 
+          <a href="{{url('/companies/'.$id.'/addIdcard')}}">
+            <button class="btn btn-primary pull-right">Add Id Card</button> 
+          </a>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
