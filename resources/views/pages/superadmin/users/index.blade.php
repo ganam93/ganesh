@@ -4,13 +4,20 @@
 @endsection
 @section('content')
 <!-- Horizontal Form -->
+
+
 <div class="box box-info" style="margin:16px">
+
+
+
     <div class="box-body">
         <div id="example2_wrapper" class="dataTables_wrapper form-inline dt-bootstrap">
             <div class="row">
                 <div class="col-sm-6"></div>
                 <div class="col-sm-6"></div>
             </div>
+    
+
             @if(count($users) > 1)
             <div class="row">
                 <div class="col-sm-12">
@@ -27,7 +34,11 @@
                             <tr role="row" class="odd">
                                 <td class="">{{$user->id}}</td>
                                 <td>{{$user->username}}</td>
-                                <td>{{$user->role}}</td> <!-- The role of the user is in different table. We'll have to join those table OR
+                                <td>
+                                @foreach($user->roles as $role        )
+                                    {{$role->display_name}}
+                                @endforeach                      
+                                </td> <!-- The role of the user is in different table. We'll have to join those table OR
                                 will have to add a column in User table -->
                             </tr>
                         </tbody>

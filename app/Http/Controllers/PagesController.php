@@ -145,8 +145,7 @@ class PagesController extends Controller
         public function users()
         {
                 $users = User::all();
-
-                return view('pages.superadmin.users')->with('users', $users);
+                return view('pages.superadmin.users.index')->with('users', $users);
         }
 
     /* ---------------------------------------------------------- */

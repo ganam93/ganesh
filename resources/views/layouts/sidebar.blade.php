@@ -223,8 +223,19 @@
 
     <script>
       $(function () {
+<<<<<<< HEAD
         $('#example1').DataTable()
         $('#example2').DataTable()
+=======
+        $('#example1, #example2').DataTable({
+          'paging'      : false,
+          'lengthChange': true,
+          'searching'   : true,
+          'ordering'    : true,
+          'info'        : false,
+          'autoWidth'   : true
+        })
+>>>>>>> dev_rohit
       })
 
     </script>

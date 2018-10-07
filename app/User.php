@@ -25,5 +25,15 @@ class User extends Authenticatable
         return $this->hasOne('App\Role');
     }
 
+    public function company()
+    {
+        return $this->belongsTo(Company::class);
+    }
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
+    }
+
     
 }
