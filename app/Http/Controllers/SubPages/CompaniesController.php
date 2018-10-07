@@ -53,7 +53,7 @@ class CompaniesController extends Controller
             'pan' => 'required|unique:companies|max:10',
             'GST' => 'required|unique:companies',
             'reg_no' => 'required|unique:companies|max:21',
-            'comapnyaddr' => 'required|unique:companies',
+            'addr_line1' => 'required|unique:companies',
         ]);
 
         $company = new Company;
@@ -62,7 +62,7 @@ class CompaniesController extends Controller
         $company->GST = $request->input('GST');
         $company->reg_no = $request->input('reg_no');
         $company->website = $request->input('website');
-        $company->addr_line1 = $request->input('addr_line2');
+        $company->addr_line1 = $request->input('addr_line1');
         $company->addr_line2 = $request->input('addr_line2');
         $company->city = $request->input('city');
         $company->country = $request->input('country');
@@ -90,7 +90,6 @@ class CompaniesController extends Controller
     {
         $request->validate([
             'addr_line1' => 'required',
-            'addr_line2' => 'required',
             'city' => 'required',
             'country' => 'required',
         ]);
